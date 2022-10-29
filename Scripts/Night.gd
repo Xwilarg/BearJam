@@ -7,6 +7,8 @@ var combo = 0;
 var best_combo = 0;
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
+var linesDisplay: Array
+
 enum Pattern { Single, Stair, Ladder }
 
 var patternProg: int
@@ -14,6 +16,9 @@ var patternRand: int
 var patternArray: Array
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
+
+func _ready():
+	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 
 func getPatternArray(pattern: int) -> Array:
 	if pattern == Pattern.Single:
@@ -55,6 +60,19 @@ func update_ui():
 	$PerfectLabel.text = str(perfect);
 	$ComboLabel.text = str(combo);
 	$BestComboLabel.text = str(best_combo);
+
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed:
+			for y in 4:
+				if Input.is_action_just_pressed("Line_" + str(y)):
+					linesDisplay[y].visible = true
+					break
+		else:
+			for y in 4:
+				if Input.is_action_just_released("Line_" + str(y)):
+					linesDisplay[y].visible = false
+					break
 
 func check_note(zone, score):
 	var notes = zone.get_overlapping_bodies();
