@@ -5,9 +5,20 @@ var speed = 12
 var xSens = -1.0
 var label: Object
 
+var objTarget: Object
+
+var actionCounter = 0
+var objLabels : Array
+var resources : Array
+var labelText: Array
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	label = get_node("Label")
+	objLabels = [ $Inventory/VBoxContainer/WoodLabel, $Inventory/VBoxContainer/RockLabel ]
+	resources = [ 0, 0 ]
+	labelText = [ "Wood: ", "Rock: " ]
 
 func _physics_process(delta):
 	var x = 0
@@ -21,7 +32,7 @@ func _physics_process(delta):
 		y = 1
 	elif Input.is_action_pressed("forward"):
 		y = -1
-	
+
 	var velocity = (global_transform.basis.z * y + global_transform.basis.x * x).normalized()
 	move_and_slide(velocity * speed)
 
@@ -29,9 +40,27 @@ func _physics_process(delta):
 	if target:
 		if target.name == "Tree":
 			label.show()
-			label.set_text("Press E")
+			label.set_text("Spam Spacebar")
+			objTarget = target
+			if Input.is_action_pressed("action_spacebar"):
+				actionCounter += 1
+				if actionCounter == 20:
+					objTarget.free()
+					reset()
+					updateUI()
+		else:
+			reset()
 	else:
-		label.hide();
+		reset()
+
+func updateUI():
+	for i in resources.size():
+		objLabels[i].text = labelText[i] + str(resources[i])
+
+func reset():
+	label.hide()
+	objTarget = null
+	actionCounter = 0
 
 func _input(event):         
 	if event is InputEventMouseMotion:
