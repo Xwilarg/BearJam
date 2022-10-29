@@ -1,5 +1,9 @@
 extends KinematicBody
 
+var verRot: float
+var speed = 12
+var xSens = -1.0
+
 func _ready():
 	pass
 
@@ -16,5 +20,13 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("forward"):
 		y = -1
 	
-	var velocity = (global_transform.basis.y * y + global_transform.basis.x * x).normalized()
-	move_and_slide(velocity)
+	var velocity = (global_transform.basis.z * y + global_transform.basis.x * x).normalized()
+	move_and_slide(velocity * speed)
+
+func _input(event):         
+	if event is InputEventMouseMotion:
+		rotate_y(deg2rad(event.relative.x * xSens))
+		var value = event.relative.y * xSens
+		if value + verRot > -50 and value + verRot < 50:
+			verRot += value
+			$Camera.rotate_x(deg2rad(value))

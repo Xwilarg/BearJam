@@ -25,6 +25,9 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="PlayerKinematicBody/CollisionShape"]
 mesh = SubResource( 2 )
 
+[node name="Camera" type="Camera" parent="PlayerKinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22236, 0 )
+
 [node name="Map" type="Spatial" parent="."]
 
 [node name="Floor" type="StaticBody" parent="Map"]
@@ -34,6 +37,3 @@ shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Floor/CollisionShape"]
 mesh = SubResource( 4 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.82892, 0 )
