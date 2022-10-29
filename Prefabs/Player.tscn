@@ -19,3 +19,13 @@ mesh = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22236, 0 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.407
+margin_right = 40.0
+margin_bottom = 14.0
+align = 1
+valign = 1
