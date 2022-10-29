@@ -1,9 +1,9 @@
 extends StaticBody
 
-var myResources = 0
+class_name NPC
 
-func _ready():
-	pass
+var resId : int
+var myResources = 0
 
 func _on_Area_body_entered(body):
 	if body.name == "Player":
