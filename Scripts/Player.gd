@@ -7,6 +7,8 @@ var label: Object
 
 var objTarget: Object
 
+enum ResourceType { WOOD, ROCK }
+
 var actionCounter = 0
 var objLabels : Array
 var resources : Array
@@ -45,7 +47,7 @@ func _physics_process(delta):
 			if Input.is_action_pressed("action_spacebar"):
 				actionCounter += 1
 				if actionCounter == 20:
-					resources[0] += 1
+					resources[ResourceType.WOOD] += 1
 					objTarget.free()
 					reset()
 					updateUI()
@@ -53,6 +55,12 @@ func _physics_process(delta):
 			reset()
 	else:
 		reset()
+
+func emptyResource(type: int) -> int:
+	var count = resources[type]
+	resources[type] = 0
+	updateUI()
+	return count
 
 func updateUI():
 	for i in resources.size():
