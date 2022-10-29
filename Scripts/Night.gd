@@ -6,14 +6,22 @@ var miss = 0;
 var combo = 0;
 var best_combo = 0;
 
+const notePrefab = preload("../Scenes/Note.tscn")
+var timer = 1
+
 func _ready():
 	pass
 
-func _process(_delta):
+func _process(delta):
+	timer -= delta
+	if timer <= 0:
+		var inst = notePrefab.instance()
+		inst.translate(Vector3(0.5, 10.2, -2.0))
+		add_child(inst)
+		timer = 1
 	hit = check_note($"Hit Area", hit);
 	perfect = check_note($"Perfect Area", perfect);
-	update_ui();
-	pass
+	update_ui()
 
 func update_ui():
 	$HitLabel.text = str(hit);
