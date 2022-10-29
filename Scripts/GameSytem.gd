@@ -3,12 +3,13 @@ extends Node
 var clock = Timer.new()
 
 var day_time = 0; # day = 0, night = 1
-
+var note_speed = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	clock.one_shot = true;
 	clock.connect("timeout", self, "change_to_night");
+	get_tree().get_current_scene().add_child(clock);
 	clock.start(600);
 	pass # Replace with function body.
 

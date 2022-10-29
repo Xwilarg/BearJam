@@ -8,10 +8,10 @@
 [ext_resource path="res://assets/Pumpkin.glb" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 10, 0.02, 10 )
+extents = Vector3( 20, 0.02, 20 )
 
 [sub_resource type="CubeMesh" id=4]
-size = Vector3( 20, 0.04, 20 )
+size = Vector3( 40, 0.04, 40 )
 
 [node name="Main" type="Spatial"]
 
