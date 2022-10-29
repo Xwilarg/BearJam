@@ -45,7 +45,7 @@ transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
 shape = SubResource( 1 )
 
 [node name="Hit Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94602, -1.45142 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839842, -1.45142 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Hit Area"]
 transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
