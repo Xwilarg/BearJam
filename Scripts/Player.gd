@@ -45,6 +45,7 @@ func _physics_process(delta):
 			if Input.is_action_pressed("action_spacebar"):
 				actionCounter += 1
 				if actionCounter == 20:
+					resources[0] += 1
 					objTarget.free()
 					reset()
 					updateUI()
