@@ -14,6 +14,10 @@ config/name="BearJam"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameSytem="*res://Scripts/GameSytem.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
