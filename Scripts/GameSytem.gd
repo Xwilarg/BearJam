@@ -9,6 +9,7 @@ var note_speed = 1
 func _ready():
 	clock.one_shot = true;
 	clock.connect("timeout", self, "change_to_night");
+	get_tree().get_current_scene().add_child(clock);
 	clock.start(600);
 	pass # Replace with function body.
 
