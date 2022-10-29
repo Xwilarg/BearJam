@@ -5,6 +5,7 @@ var hit = 0;
 var miss = 0;
 var combo = 0;
 var best_combo = 0;
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
@@ -16,7 +17,7 @@ func _process(delta):
 	timer -= delta
 	if timer <= 0:
 		var inst = notePrefab.instance()
-		inst.translate(Vector3(0.5, 10.2, -2.0))
+		inst.translate(Vector3(-1.5 + 1 * rng.randi_range(0, 3), 10.2, -2.0))
 		add_child(inst)
 		timer = 1
 	hit = check_note($"Hit Area", hit);
