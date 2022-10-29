@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://UI/redbar.png" type="Texture" id=1]
+[ext_resource path="res://UI/WhiteBar.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Night.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Note.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UI/blubar.png" type="Texture" id=4]
-[ext_resource path="res://UI/yelbar.png" type="Texture" id=5]
-[ext_resource path="res://UI/grebar.png" type="Texture" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -23,15 +20,15 @@ texture = ExtResource( 1 )
 
 [node name="RedLane2" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1, -0.5, 5.5, -2.362 )
-texture = ExtResource( 4 )
+texture = ExtResource( 1 )
 
 [node name="RedLane3" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0.5, 5.5, -2.362 )
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
 
 [node name="RedLane4" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1, 1.5, 5.5, -2.362 )
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 
 [node name="Miss Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.448635, -1.45142 )
@@ -48,11 +45,13 @@ transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
 shape = SubResource( 1 )
 
 [node name="Hit Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83849, -1.45142 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94602, -1.45142 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Hit Area"]
 transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
 shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Hit Area"]
 
 [node name="Note" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 5, -2 )
