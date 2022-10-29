@@ -3,7 +3,7 @@ extends Node
 var clock = Timer.new()
 
 var day_time = 0; # day = 0, night = 1
-
+var note_speed = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
