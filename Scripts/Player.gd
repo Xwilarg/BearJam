@@ -3,7 +3,6 @@ extends KinematicBody
 var verRot: float
 var speed = 12
 var xSens = -1.0
-var interactionDistance = 1.0
 var label: Object
 
 func _ready():
@@ -26,16 +25,13 @@ func _physics_process(delta):
 	var velocity = (global_transform.basis.z * y + global_transform.basis.x * x).normalized()
 	move_and_slide(velocity * speed)
 
-	var center = get_viewport().size/2
-	var from = $Camera.project_ray_origin(center)
-	var to = from + $Camera.project_ray_normal(center) * 100
-	var result = get_world().direct_space_state.intersect_ray(from, to)
-	label.hide()
-	if result and global_transform.origin.distance_to(result.collider.global_transform.origin) < interactionDistance:
-		print(result.collider.name)
-		if result.collider.name == "Tree":
+	var target = $Camera/RayCast.get_collider();
+	if target:
+		if target.name == "Tree":
 			label.show()
 			label.set_text("Press E")
+	else:
+		label.hide();
 
 func _input(event):         
 	if event is InputEventMouseMotion:
