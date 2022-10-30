@@ -51,7 +51,7 @@ visible = false
 texture = ExtResource( 3 )
 
 [node name="Miss Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.448635, -1.45142 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93135, -1.45142 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Miss Area"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

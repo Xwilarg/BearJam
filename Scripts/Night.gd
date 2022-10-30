@@ -61,9 +61,14 @@ func _process(delta):
 	for note in allNotes:
 		for i in 4:
 			if note.translation.x == xOffset + i && Input.is_action_just_pressed("Line_" + str(i)):
-				print(getYDistance(note))
-				score += 1;
-				combo += 1;
+				var dist = getYDistance(note)
+				if dist < 1:
+					score += 1;
+					combo += 1;
+				elif dist < 2:
+					combo = 0
+				else:
+					break
 				allNotes.erase(note)
 				note.free();
 				breakLoop = true
