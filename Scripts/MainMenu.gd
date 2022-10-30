@@ -19,5 +19,4 @@ func _input(event):
 				$Credits/Text.visible = !$Credits/Text.visible
 				$Credits/Secret.visible = false
 			elif name == "Secret":
-				$Credits/Secret.visible = !$Credits/Secret.visible
-				$Credits/Text.visible = false
+				OS.shell_open("https://youtu.be/dQw4w9WgXcQ")

@@ -175,24 +175,3 @@ Programming:
 Christian Chaux"
 align = 1
 valign = 1
-
-[node name="Secret" type="Label" parent="Credits"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 12 )
-text = "Hi it's me, one of the developer
-
-I was tasked in making the main menu
-but I have no idea what to do for the 3rd house
-and sadly you still clicked on it
-
-So could you do as if you saw something really cool
-and interesting so I can go back in squashing bugs
-and features?
-
-Great, that's a yes then
-
-Thanks"
-align = 1
-valign = 1

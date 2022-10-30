@@ -69,6 +69,7 @@ script = ExtResource( 7 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.827727, -0.218963, 0.516646, 0, 0.920723, 0.390217, -0.56113, -0.322993, 0.762108, 14.5234, 9.65017, 1.88729 )
+current = true
 
 [node name="Village" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62723, 0, -16.7132 )
