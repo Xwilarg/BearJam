@@ -46,7 +46,8 @@ func _physics_process(delta):
 			label.set_text("Spam K and L to cut down")
 			objTarget = target
 			if Input.is_action_just_pressed("Line_2") && woodcutting == -1 || Input.is_action_just_pressed("Line_3") && woodcutting == 1:
-				actionCounter += 1
+				actionCounter += 1;
+				woodcutting *= -1;
 				if actionCounter == 5:
 					resources[ResourceType.WOOD] += 1
 					objTarget.free()
