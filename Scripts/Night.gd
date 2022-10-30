@@ -77,25 +77,22 @@ func _process(delta):
 			timer = 0.1
 	
 	var xOffset = -1.5
-	var breakLoop = false
 
-	for note in allNotes:
-		for i in 4:
-			if note.translation.x == xOffset + i && Input.is_action_just_pressed("Line_" + str(i)):
-				var dist = getYDistance(note)
-				if dist < 1:
-					score += 1;
-					combo += 1;
-				elif dist < 2:
-					combo = 0
-				else:
+	for i in 4:
+		if Input.is_action_just_pressed("Line_" + str(i)):
+			for note in allNotes:
+				if note.translation.x == xOffset + i:
+					var dist = getYDistance(note)
+					if dist < 1:
+						score += 1;
+						combo += 1;
+					elif dist < 2:
+						combo = 0
+					else:
+						break
+					allNotes.erase(note)
+					note.free();
 					break
-				allNotes.erase(note)
-				note.free();
-				breakLoop = true
-				break
-		if breakLoop:
-			break
 	update_ui()
 
 func update_ui():
@@ -107,12 +104,10 @@ func _input(event):
 			for y in 4:
 				if Input.is_action_just_pressed("Line_" + str(y)):
 					linesDisplay[y].visible = true
-					break
 		else:
 			for y in 4:
 				if Input.is_action_just_released("Line_" + str(y)):
 					linesDisplay[y].visible = false
-					break
 
 func _on_Miss_Area_body_entered(body):
 	if "Note" in body.name:
