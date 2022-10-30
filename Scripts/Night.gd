@@ -1,6 +1,5 @@
 extends Spatial
 
-var score = 0
 var combo = 0;
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -19,11 +18,26 @@ var burst = 0
 var comboLabel: Object
 var timerLabel: Object
 
+var nbMiss: int
+var nbBad: int
+var nbGood: int
+var nbGreat: int
+
+var scoreMiss: Object
+var scoreBad: Object
+var scoreGood: Object
+var scoreGreat: Object
+
 var allNotes = []
 
 var musicTimer: float
 
 func _ready():
+	scoreMiss = $Score/Miss
+	scoreBad = $Score/Bad
+	scoreGood = $Score/Good
+	scoreGreat = $Score/Great
+	
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 	comboLabel = $ComboLabel
 	timerLabel = $TimerLabel
@@ -101,9 +115,16 @@ func _process(delta):
 				if note.translation.x == xOffset + i:
 					var dist = getYDistance(note)
 					if dist < gd.permissiveness:
-						score += 1;
+						nbGreat += 1;
 						combo += 1;
-					elif dist < 2:
+					elif dist < gd.permissiveness * 2.0:
+						nbGood += 1;
+						combo += 1;
+					elif dist < gd.permissiveness * 3.0:
+						nbBad += 1
+						combo = 0
+					elif dist < gd.permissiveness * 4.0:
+						nbMiss += 1
 						combo = 0
 					else:
 						break
@@ -114,6 +135,10 @@ func _process(delta):
 
 func update_ui():
 	comboLabel.text = "" if combo < 10 else str(combo)
+	scoreGreat.text = str(nbGreat)
+	scoreGood.text = str(nbGood)
+	scoreBad.text = str(nbBad)
+	scoreMiss.text = str(nbMiss)
 
 func _input(event):
 	if event is InputEventKey:

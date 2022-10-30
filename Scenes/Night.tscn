@@ -91,4 +91,34 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.528, -2.009 )
 pixel_size = 0.05
 text = "L"
 
+[node name="Score" type="Spatial" parent="."]
+
+[node name="Miss" type="Label3D" parent="Score"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17088, 1.21565, -2.009 )
+pixel_size = 0.05
+modulate = Color( 1, 0, 0, 1 )
+text = "0"
+horizontal_alignment = 2
+
+[node name="Bad" type="Label3D" parent="Score"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.171, 1.966, -2.009 )
+pixel_size = 0.05
+modulate = Color( 0.921569, 0.631373, 0.0156863, 1 )
+text = "0"
+horizontal_alignment = 2
+
+[node name="Good" type="Label3D" parent="Score"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.171, 2.716, -2.009 )
+pixel_size = 0.05
+modulate = Color( 0.0980392, 1, 0.0235294, 1 )
+text = "0"
+horizontal_alignment = 2
+
+[node name="Great" type="Label3D" parent="Score"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.171, 3.466, -2.009 )
+pixel_size = 0.05
+modulate = Color( 0, 0.717647, 1, 1 )
+text = "0"
+horizontal_alignment = 2
+
 [connection signal="body_entered" from="Miss Area" to="." method="_on_Miss_Area_body_entered"]
