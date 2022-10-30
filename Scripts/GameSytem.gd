@@ -8,6 +8,8 @@ var songDuration = 30 # Duration of the song
 var day_time = 0;
 var note_speed = 10;
 
+var isFullCombo = false
+
 var finalScore: int
 
 enum ResourceType { WOOD, ROCK, SCRAP, CANDY}
