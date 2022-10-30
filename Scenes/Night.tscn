@@ -192,7 +192,27 @@ transform = Transform( 0.606238, 0, 0.795283, 0, 1, 0, -0.795283, 0, 0.606238, -
 
 [node name="SpotLight" type="SpotLight" parent="Bear"]
 transform = Transform( 0.954433, 0, -0.298425, 0, 1, 0, 0.298425, 0, 0.954433, -1.30277, 1.62516, 3.11833 )
+visible = false
 light_color = Color( 0.796078, 0.176471, 0.176471, 1 )
+light_energy = 3.0
+
+[node name="SpotLight2" type="SpotLight" parent="Bear"]
+transform = Transform( 0.954433, 0, -0.298425, 0, 1, 0, 0.298425, 0, 0.954433, -1.30277, 1.62516, 3.11833 )
+visible = false
+light_color = Color( 0.176471, 0.333333, 0.796078, 1 )
+light_energy = 3.0
+
+[node name="SpotLight3" type="SpotLight" parent="Bear"]
+transform = Transform( 0.954433, 0, -0.298425, 0, 1, 0, 0.298425, 0, 0.954433, -1.30277, 1.62516, 3.11833 )
+visible = false
+light_color = Color( 0.196078, 0.796078, 0.176471, 1 )
+light_energy = 3.0
+
+[node name="SpotLight4" type="SpotLight" parent="Bear"]
+transform = Transform( 0.954433, 0, -0.298425, 0, 1, 0, 0.298425, 0, 0.954433, -1.30277, 1.62516, 3.11833 )
+visible = false
+light_color = Color( 0.690196, 0.796078, 0.176471, 1 )
+light_energy = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 10 )

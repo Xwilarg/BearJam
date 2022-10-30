@@ -30,6 +30,8 @@ var scoreBad: Object
 var scoreGood: Object
 var scoreGreat: Object
 
+var lights: Array
+
 var bgm: Object
 
 var allNotes = []
@@ -49,6 +51,12 @@ func _ready():
 		$Audios/Audio_2,
 		$Audios/Audio_3,
 		$Audios/Audio_4
+	]
+	lights = [
+		$Bear/SpotLight,
+		$Bear/SpotLight2,
+		$Bear/SpotLight3,
+		$Bear/SpotLight4
 	]
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 	comboLabel = $ComboLabel
@@ -144,6 +152,9 @@ func _process(delta):
 					notesPlayers[i].play()
 					allNotes.erase(note)
 					note.free();
+					for z in lights.size():
+						lights[z].visible = false
+					lights[i].visible = true
 					break
 	update_ui()
 
