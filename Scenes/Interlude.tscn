@@ -1,0 +1,286 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/2D Assets/spotlight.png" type="Texture" id=1]
+[ext_resource path="res://assets/2D Assets/Secured.png" type="Texture" id=2]
+[ext_resource path="res://assets/2D Assets/Speaker.png" type="Texture" id=3]
+[ext_resource path="res://assets/2D Assets/Tower.png" type="Texture" id=4]
+[ext_resource path="res://Prefabs/House_var2_0.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/House_var1_0.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Interlude.gd" type="Script" id=7]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.203922, 0.180392, 0.156863, 1 )
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.486275, 0.482353, 0.458824, 1 )
+
+[sub_resource type="CubeMesh" id=11]
+material = SubResource( 6 )
+
+[sub_resource type="ProceduralSky" id=9]
+sky_top_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+sky_horizon_color = Color( 0, 0, 0, 1 )
+sun_color = Color( 0, 0, 0, 1 )
+sun_latitude = 168.38
+
+[sub_resource type="Environment" id=12]
+background_mode = 2
+background_sky = SubResource( 9 )
+background_energy = 0.1
+ambient_light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+ambient_light_energy = 0.5
+fog_color = Color( 0.494118, 0.494118, 0.494118, 1 )
+fog_sun_color = Color( 0.823529, 0.647059, 0.505882, 1 )
+fog_sun_amount = 1.0
+fog_depth_begin = 1.0
+fog_depth_end = 80.0
+fog_depth_curve = 2.92817
+fog_height_min = 3.0
+fog_height_curve = 33.1285
+
+[node name="Interlude" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.827727, -0.218963, 0.516646, 0, 0.920723, 0.390217, -0.56113, -0.322993, 0.762108, 14.5234, 9.65017, 1.88729 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+margin_left = 58.0
+margin_right = 558.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 500, 560 )
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 38.0
+margin_right = 493.0
+margin_bottom = 562.0
+text = "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum "
+align = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 562.0
+margin_right = 966.0
+margin_bottom = 600.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 404.0
+margin_bottom = 200.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 193.0
+
+[node name="CenterContainer3" type="CenterContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 164.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/CenterContainer3"]
+margin_left = 11.0
+margin_right = 175.0
+margin_bottom = 164.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 186.0
+margin_bottom = 182.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 193.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 164.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer/CenterContainer"]
+margin_left = 11.0
+margin_right = 175.0
+margin_bottom = 164.0
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+margin_top = 168.0
+margin_right = 186.0
+margin_bottom = 182.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 404.0
+margin_bottom = 404.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 193.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 164.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer/VBoxContainer/CenterContainer2"]
+margin_left = 11.0
+margin_right = 175.0
+margin_bottom = 164.0
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 186.0
+margin_bottom = 182.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 193.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer2/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 164.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer2/VBoxContainer/CenterContainer"]
+margin_left = 11.0
+margin_right = 175.0
+margin_bottom = 164.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer2/VBoxContainer"]
+margin_top = 168.0
+margin_right = 186.0
+margin_bottom = 182.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 408.0
+margin_right = 404.0
+margin_bottom = 408.0
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 412.0
+margin_right = 404.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 400, 180 )
+text = "Switch to Night"
+
+[node name="Village" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62723, 0, -16.7132 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Village"]
+transform = Transform( 20, 0, 0, 0, 0.02, 0, 0, 0, 20, -1.97095, 0.316566, -2.08746 )
+mesh = SubResource( 10 )
+skeleton = NodePath("")
+
+[node name="MeshInstance2" type="MeshInstance" parent="Village"]
+transform = Transform( 20, 0, 0, 0, 0.04, 0, 0, 0, 2, -1.97095, 0.316566, -20.1875 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+
+[node name="MeshInstance4" type="MeshInstance" parent="Village"]
+transform = Transform( 2, 0, 0, 0, 0.04, 0, 0, 0, 16.1, -1.97095, 0.316566, -2.08746 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+
+[node name="MeshInstance6" type="MeshInstance" parent="Village"]
+transform = Transform( 2, 0, 0, 0, 0.04, 0, 0, 0, 16.1, 16.0391, 0.316566, -2.08746 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+
+[node name="MeshInstance5" type="MeshInstance" parent="Village"]
+transform = Transform( 2, 0, 0, 0, 0.04, 0, 0, 0, 16.1, -19.9809, 0.316566, -2.08746 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+
+[node name="MeshInstance3" type="MeshInstance" parent="Village"]
+transform = Transform( 20, 0, 0, 0, 0.04, 0, 0, 0, 2, -1.97095, 0.316566, 16.0125 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+
+[node name="House_var1_0" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4846, 0.318046, 11.2098 )
+
+[node name="House_var1_1" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4673, 0.318046, 11.2098 )
+
+[node name="House_var2_0" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83672, 0.318481, 11.0151 )
+
+[node name="House_var2_1" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7424, 0.319594, 11.3378 )
+
+[node name="House_var2_4" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( -0.0498259, 0, 0.998758, 0, 1, 0, -0.998758, 0, -0.0498259, -15.4652, 0.319594, -1.7964 )
+
+[node name="House_var1_2" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.4846, 0.318046, -15.6248 )
+
+[node name="House_var1_3" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.4673, 0.318046, -15.6248 )
+
+[node name="House_var2_2" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.83672, 0.318481, -15.8195 )
+
+[node name="House_var2_3" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.7424, 0.319594, -15.4968 )
+
+[node name="House_var1_4" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( 0.775925, 0, 0.630825, 0, 1, 0, -0.630825, 0, 0.775925, -11.2341, 0.317216, -8.93851 )
+
+[node name="House_var1_5" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( -0.6323, 0, 0.774724, 0, 1, 0, -0.774724, 0, -0.6323, -10.8343, 0.317216, 4.79138 )
+
+[node name="House_var2_5" parent="Village" instance=ExtResource( 5 )]
+transform = Transform( 0.00261793, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261793, 11.2996, 0.319594, -1.93633 )
+
+[node name="House_var1_6" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( -0.668417, 0, -0.743787, 0, 1, 0, 0.743787, 0, -0.668417, 6.91156, 0.317216, 4.73117 )
+
+[node name="House_var1_7" parent="Village" instance=ExtResource( 6 )]
+transform = Transform( 0.595019, 0, -0.803711, 0, 1, 0, 0.803711, 0, 0.595019, 6.98481, 0.317216, -8.73538 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 12 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.992678, -0.0390419, 0.114312, 0, 0.946328, 0.323207, -0.120795, -0.320841, 0.939399, 0, 6.10858, 0 )
+light_color = Color( 0.796078, 1, 0.972549, 1 )
+light_energy = 0.1
+shadow_enabled = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
