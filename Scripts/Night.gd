@@ -11,7 +11,7 @@ var patternRand: int
 var patternArray: Array
 var currPattern: int
 const notePrefab = preload("../Scenes/Note.tscn")
-var timer = 1
+var timer = 3
 
 var notesPlayers: Array
 

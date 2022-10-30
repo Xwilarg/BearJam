@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/2D Assets/spotlight.png" type="Texture" id=1]
 [ext_resource path="res://assets/2D Assets/Secured.png" type="Texture" id=2]
@@ -48,6 +48,18 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 15
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 25
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
@@ -215,5 +227,33 @@ anchor_bottom = 1.0
 custom_fonts/font = SubResource( 15 )
 text = "Instructions"
 valign = 1
+
+[node name="Label" type="Label" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -15.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Night is coming"
+align = 2
+
+[node name="UI2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="UI2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 100.0
+margin_right = -15.0
+custom_fonts/font = SubResource( 17 )
+text = "And you were the bad guy all along!
+You now have to enter the village
+to eat all these delicious animals
+
+The next part is played like a rhythm game
+Use S D K L to hit the note at the right time"
+align = 2
 
 [connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]
