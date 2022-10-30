@@ -40,7 +40,7 @@ func getPatternArray(pattern: int) -> Array:
 	elif pattern == Pattern.Funnel:
 		if rng.randi_range(0, 1) == 0:
 			return [0, 3, 1, 2, 0, 3]
-		return [1, 2, 0, 3, 1, 2, 0, 3]
+		return [1, 2, 0, 3, 1, 2]
 	return []
 
 func getWaitingTime(pattern: int) -> int:
@@ -72,8 +72,8 @@ func _process(delta):
 		else:
 			while true:
 				spawnNote()
-				if getWaitingTime(currPattern) == 1:
-					break
+				#if getWaitingTime(currPattern) == 1:
+				break
 			timer = 0.1
 	
 	var xOffset = -1.5
