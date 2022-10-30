@@ -35,7 +35,7 @@ func updateMainParameters():
 	permissiveness = 1 - (.1 * candy)
 	maxBurst = 1 + (rock / 10)
 	delayBetweenNotes = 0.2 - (0.01 * scrap)
-	songDuration = 10 + (5 * wood)
+	songDuration = 10 + (2 * wood)
 
 func go_to_scene(path):
 	get_tree().change_scene(path)
