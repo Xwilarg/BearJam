@@ -76,6 +76,7 @@ func _physics_process(delta):
 			label.set_text("Space: Pickup")
 			objTarget = target
 			if Input.is_action_just_pressed("action_spacebar"):
+				$Sounds/CollectCandy.play()  
 				resources[ResourceType.CANDY] += 1
 				objTarget.free()
 				reset()
