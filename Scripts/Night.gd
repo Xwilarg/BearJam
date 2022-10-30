@@ -6,11 +6,11 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 var linesDisplay: Array
 
-enum Pattern { Single, Stair, Ladder }
 
 var patternProg: int
 var patternRand: int
 var patternArray: Array
+var currPattern: int
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
 
@@ -19,10 +19,10 @@ var allNotes = []
 func _ready():
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 
+enum Pattern { Stair, Ladder, Funnel }
+
 func getPatternArray(pattern: int) -> Array:
-	if pattern == Pattern.Single:
-		return [rng.randi_range(0, 3)]
-	elif pattern == Pattern.Stair:
+	if pattern == Pattern.Stair:
 		if rng.randi_range(0, 1) == 0:
 			return [0, 1, 2, 3]
 		return [3, 2, 1, 0]
@@ -34,26 +34,44 @@ func getPatternArray(pattern: int) -> Array:
 		elif rand == 3: return [3, 2, 3, 2]
 		elif rand == 4: return [2, 1, 2, 1]
 		else: return [1, 0, 1, 0]
+	elif pattern == Pattern.Funnel:
+		if rng.randi_range(0, 1) == 0:
+			return [0, 3, 1, 2, 0, 3]
+		return [1, 2, 0, 3, 1, 2, 0, 3]
 	return []
+
+func getWaitingTime(pattern: int) -> int:
+	if pattern == Pattern.Funnel:
+		return 0 if patternProg % 2 == 1 else 1
+	return 1
+
+func getPatternMaxSize() -> int: return 3
 
 func getYDistance(obj) -> int:
 	var p = obj.global_transform.origin.y - 1
 	return -p if p < 0 else p
+
+func spawnNote():
+	var inst = notePrefab.instance()
+	currPattern = patternArray[patternProg]
+	inst.translate(Vector3(-1.5 + 1 * currPattern, 10.2, -2.0))
+	add_child(inst)
+	allNotes.push_back(inst)
+	patternProg += 1
 
 func _process(delta):
 	timer -= delta
 	if timer <= 0:
 		if patternProg == patternArray.size():
 			patternProg = 0
-			patternArray = getPatternArray(rng.randi_range(0, 2))
+			patternArray = getPatternArray(rng.randi_range(0, getPatternMaxSize()))
 			timer = 0.5
 		else:
-			var inst = notePrefab.instance()
-			inst.translate(Vector3(-1.5 + 1 * patternArray[patternProg], 10.2, -2.0))
-			add_child(inst)
-			allNotes.push_back(inst)
+			while true:
+				spawnNote()
+				if getWaitingTime(currPattern) == 1:
+					break
 			timer = 0.1
-			patternProg += 1
 	
 	var xOffset = -1.5
 	var breakLoop = false
