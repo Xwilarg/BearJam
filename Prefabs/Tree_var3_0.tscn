@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Tree3.glb" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+height = 6.0
+
+[node name="Tree_var3_0" type="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+shape = SubResource( 1 )
+
+[node name="Tree3" parent="." instance=ExtResource( 1 )]

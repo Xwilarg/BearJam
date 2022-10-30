@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 	var target = $Camera/RayCast.get_collider();
 	if target:
-		if target.name == "Tree":
+		if "Tree" in target.name:
 			label.show()
 			label.set_text("Spam Spacebar")
 			objTarget = target
