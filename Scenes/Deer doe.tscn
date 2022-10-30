@@ -20,11 +20,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54198, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825351, 0 )
 shape = SubResource( 1 )
 
-[node name="Deer Doe" parent="." index="3" instance=ExtResource( 1 )]
+[node name="w" parent="." index="3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.289297 )
 
-[node name="Witch Hat" parent="Deer Doe" index="1" instance=ExtResource( 3 )]
+[node name="Witch Hat" parent="w" index="1" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.994678, 0.103036, 0, -0.103036, 0.994678, 0, 1.66046, 0.77546 )
 
-[node name="Candy2" parent="Deer Doe" index="2" instance=ExtResource( 4 )]
+[node name="Candy2" parent="w" index="2" instance=ExtResource( 4 )]
 transform = Transform( 0.882078, -0.450766, 0.136927, 0, 0.290652, 0.956829, -0.471104, -0.843997, 0.256378, 0.118934, 1.44833, 1.30115 )
