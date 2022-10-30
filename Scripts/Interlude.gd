@@ -1,10 +1,10 @@
 extends Spatial
 
 func _ready():
-	var woodLabel = $HBoxContainer/VBoxContainer/HBoxContainer/Shield/VBoxContainer/Label
-	var rockLabel = $HBoxContainer/VBoxContainer/HBoxContainer3/Tower/VBoxContainer/Label
-	var scrapLabel = $HBoxContainer/VBoxContainer/HBoxContainer/Sound/VBoxContainer/Label
-	var candyLabel = $HBoxContainer/VBoxContainer/HBoxContainer3/Light/VBoxContainer/Label
+	var woodLabel = $UI/VBoxContainer/TextureRect/Wood
+	var rockLabel = $UI/VBoxContainer/TextureRect2/Rock
+	var scrapLabel = $UI/VBoxContainer/TextureRect3/Light
+	var candyLabel = $UI/VBoxContainer/TextureRect4/Candy
 	woodLabel.text = "City defense: " + str(GameSytem.wood()) + " pieces of wood,\nsong will last " + str(GameSytem.songDuration) + " seconds"
 	rockLabel.text = "Towers: " + str(GameSytem.rock()) + " rocks,\nmax number of pattern bursts of " + str(GameSytem.maxBurst)
 	scrapLabel.text = "Speakers: " + str(GameSytem.scrap()) + " scraps,\ndelay between notes of " + str(GameSytem.delayBetweenNotes) + " seconds"
