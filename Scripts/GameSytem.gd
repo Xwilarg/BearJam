@@ -13,11 +13,23 @@ var finalScore: int
 enum ResourceType { WOOD, ROCK, SCRAP, CANDY}
 var residents_ressources = [0, 0, 0, 0]
 
+func wood() -> int:
+	return residents_ressources[ResourceType.WOOD];
+
+func rock() -> int:
+	return residents_ressources[ResourceType.ROCK];
+
+func scrap() -> int:
+	return residents_ressources[ResourceType.SCRAP];
+
+func candy() -> int:
+	return residents_ressources[ResourceType.CANDY];
+
 func updateMainParameters():
-	var wood = residents_ressources[ResourceType.WOOD]
-	var rock = residents_ressources[ResourceType.ROCK]
-	var scrap = residents_ressources[ResourceType.SCRAP]
-	var candy = residents_ressources[ResourceType.CANDY]
+	var wood = wood()
+	var rock = rock()
+	var scrap = scrap()
+	var candy = candy()
 	if candy > 10:
 		candy = 10
 	permissiveness = 1 - (.1 * candy)
