@@ -21,6 +21,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5261, -0.861843 )
 [node name="RayCast" type="RayCast" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 2.09493, -9.15724e-08, 0, 0, -0.0471634 )
 enabled = true
+collision_mask = 3
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.25
@@ -41,12 +42,24 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="WoodLabel" type="Label" parent="Inventory/VBoxContainer"]
-margin_right = 53.0
+margin_right = 54.0
 margin_bottom = 14.0
 text = "Wood: 0"
 
 [node name="RockLabel" type="Label" parent="Inventory/VBoxContainer"]
 margin_top = 18.0
-margin_right = 53.0
+margin_right = 54.0
 margin_bottom = 32.0
 text = "Rock: 0"
+
+[node name="ScrapLabel" type="Label" parent="Inventory/VBoxContainer"]
+margin_top = 36.0
+margin_right = 54.0
+margin_bottom = 50.0
+text = "Scrap: 0"
+
+[node name="CandyLabel" type="Label" parent="Inventory/VBoxContainer"]
+margin_top = 54.0
+margin_right = 54.0
+margin_bottom = 68.0
+text = "Candy: 0"

@@ -7,7 +7,7 @@ var label: Object
 
 var objTarget: Object
 
-enum ResourceType { WOOD, ROCK }
+enum ResourceType { WOOD, ROCK, SCRAP, CANDY}
 
 var actionCounter = 0
 var objLabels : Array
@@ -18,9 +18,9 @@ var labelText: Array
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	label = get_node("Label")
-	objLabels = [ $Inventory/VBoxContainer/WoodLabel, $Inventory/VBoxContainer/RockLabel ]
-	resources = [ 0, 0 ]
-	labelText = [ "Wood: ", "Rock: " ]
+	objLabels = [ $Inventory/VBoxContainer/WoodLabel, $Inventory/VBoxContainer/RockLabel, $Inventory/VBoxContainer/ScrapLabel, $Inventory/VBoxContainer/CandyLabel ]
+	resources = [ 0, 0, 0, 0]
+	labelText = [ "Wood: ", "Rock: ", "Scrap: ", "Candy: " ]
 
 func _physics_process(delta):
 	var x = 0
