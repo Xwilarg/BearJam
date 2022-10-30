@@ -21,7 +21,7 @@ albedo_color = Color( 0.486275, 0.482353, 0.458824, 1 )
 [sub_resource type="CubeMesh" id=11]
 material = SubResource( 6 )
 
-[sub_resource type="ProceduralSky" id=9]
+[sub_resource type="ProceduralSky" id=18]
 sky_top_color = Color( 0.207843, 0.207843, 0.207843, 1 )
 sky_horizon_color = Color( 0, 0, 0, 1 )
 sun_color = Color( 0, 0, 0, 1 )
@@ -29,7 +29,7 @@ sun_latitude = 168.38
 
 [sub_resource type="Environment" id=12]
 background_mode = 2
-background_sky = SubResource( 9 )
+background_sky = SubResource( 18 )
 background_energy = 0.1
 ambient_light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 ambient_light_energy = 0.5

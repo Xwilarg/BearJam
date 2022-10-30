@@ -8,13 +8,14 @@ var note_speed = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	clock.one_shot = true;
-	clock.connect("timeout", self, "change_to_night");
 	self.add_child(clock);
-	clock.start(480);
+	clock.one_shot = true;
+	clock.connect("timeout", self, "_change_to_night");
+	clock.start(4);
 	pass # Replace with function body.
 
 func _change_to_night():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	GameSytem.updateMainParameters()
 	GameSytem.go_to_scene("res://Scenes/Interlude.tscn")
 	pass

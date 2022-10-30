@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Tree_var1_0.tscn" type="PackedScene" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Prefabs/Candy_var2_0.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Prefabs/Spikes.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Prefabs/Fences.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/Wood Pile.glb" type="PackedScene" id=23]
+[ext_resource path="res://assets/Pumpkin.glb" type="PackedScene" id=24]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -15271,6 +15273,17 @@ ressouces_type = 3
 transform = Transform( 0.741952, 0, 0.670453, 0, 1, 0, -0.670453, 0, 0.741952, -9.51099, 0.321976, -6.7447 )
 text_to_show = "Yo boy! I am totally human and need human scraps to make human speakers to play human music"
 ressouces_type = 2
+
+[node name="others" type="Node" parent="Map"]
+
+[node name="Wood Pile" parent="Map/others" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72027, 0.325433, -7.98262 )
+
+[node name="Wood Pile2" parent="Map/others" instance=ExtResource( 23 )]
+transform = Transform( -0.0387017, 0, 0.999251, 0, 1, 0, -0.999251, 0, -0.0387017, 5.23512, 0.325433, -5.74526 )
+
+[node name="Pumpkin" parent="Map/others" instance=ExtResource( 24 )]
+transform = Transform( -0.0387017, 0, 0.999251, 0, 1, 0, -0.999251, 0, -0.0387017, 5.14239, 6.58487, -7.36249 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7337, 0.0200014, 6.40382 )
