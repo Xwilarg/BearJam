@@ -14,6 +14,8 @@ var currPattern: int
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
 
+var burst = 0
+
 var comboLabel: Object
 
 var allNotes = []
@@ -68,7 +70,12 @@ func _process(delta):
 		if patternProg == patternArray.size():
 			patternProg = 0
 			patternArray = getPatternArray(rng.randi_range(0, getPatternMaxSize()))
-			timer = 0.5
+			if burst > 0:
+				timer = 0
+				burst -= 1
+			else:
+				burst = rng.randi_range(0, 3)
+				timer = 0.5
 		else:
 			while true:
 				spawnNote()
