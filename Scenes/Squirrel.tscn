@@ -9,6 +9,9 @@ radius = 0.813677
 
 [node name="Squirrel" instance=ExtResource( 1 )]
 
+[node name="Label3D" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39757, 0 )
+
 [node name="Squirrel" parent="." index="2" instance=ExtResource( 2 )]
 
 [node name="StaticBody" type="StaticBody" parent="." index="3"]

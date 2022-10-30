@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Pulang.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="SphereShape" id=7]
 radius = 7.63078
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 3
+font_data = ExtResource( 2 )
 
 [node name="NPC" type="Spatial"]
 script = ExtResource( 1 )
@@ -15,9 +20,9 @@ shape = SubResource( 7 )
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93155, 0 )
-pixel_size = 0.04
 billboard = 1
 text = "Squeak squeak I need more wood to fortifiate the village"
+font = SubResource( 8 )
 autowrap = true
 width = 150.0
 

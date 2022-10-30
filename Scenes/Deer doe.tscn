@@ -12,7 +12,7 @@ radius = 0.813677
 [node name="Deer doe" instance=ExtResource( 2 )]
 
 [node name="Label3D" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54198, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85049, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="." index="2"]
 
