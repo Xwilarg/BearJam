@@ -14,10 +14,13 @@ var currPattern: int
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
 
+var comboLabel: Object
+
 var allNotes = []
 
 func _ready():
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
+	comboLabel = $ComboLabel
 
 enum Pattern { Stair, Ladder, Funnel }
 
@@ -96,7 +99,7 @@ func _process(delta):
 	update_ui()
 
 func update_ui():
-	pass
+	comboLabel.text = "" if combo < 10 else str(combo)
 
 func _input(event):
 	if event is InputEventKey:
