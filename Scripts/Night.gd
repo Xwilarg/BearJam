@@ -107,6 +107,7 @@ func _process(delta):
 	musicTimer -= delta
 	timerLabel.text = "%.2f" % musicTimer
 	if musicTimer <= 0.0:
+		GameSytem.isFullCombo = nbBad == 0 && nbMiss == 0
 		GameSytem.finalScore = ((nbGreat * 300) + (nbGood * 100) + (nbBad * 50)) * GameSytem.permissiveness
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
