@@ -11,15 +11,32 @@ var note_speed = 10;
 var finalScore: int
 
 enum ResourceType { WOOD, ROCK, SCRAP, CANDY}
-var residents_ressources = [0, 0, 0, 0];
+var residents_ressources = [0, 0, 0, 0]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func wood() -> int:
+	return residents_ressources[ResourceType.WOOD];
+
+func rock() -> int:
+	return residents_ressources[ResourceType.ROCK];
+
+func scrap() -> int:
+	return residents_ressources[ResourceType.SCRAP];
+
+func candy() -> int:
+	return residents_ressources[ResourceType.CANDY];
+
+func updateMainParameters():
+	var wood = wood()
+	var rock = rock()
+	var scrap = scrap()
+	var candy = candy()
+	if candy > 10:
+		candy = 10
+	permissiveness = 1 - (.1 * candy)
+	maxBurst = 1 + (rock / 10)
+	delayBetweenNotes = 0.2 - (0.01 * scrap)
+	songDuration = 10 + (5 * wood)
 
 func go_to_scene(path):
 	get_tree().change_scene(path)
 	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
