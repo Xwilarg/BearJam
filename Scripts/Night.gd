@@ -1,10 +1,7 @@
 extends Spatial
 
-var perfect = 0;
-var hit = 0;
-var miss = 0;
+var score = 0
 var combo = 0;
-var best_combo = 0;
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 var linesDisplay: Array
@@ -16,6 +13,8 @@ var patternRand: int
 var patternArray: Array
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
+
+var allNotes = []
 
 func _ready():
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
@@ -37,6 +36,9 @@ func getPatternArray(pattern: int) -> Array:
 		else: return [1, 0, 1, 0]
 	return []
 
+func getYDistance(obj) -> int:
+	var p = obj.global_transform.origin.y - 1
+	return -p if p < 0 else p
 
 func _process(delta):
 	timer -= delta
@@ -49,17 +51,29 @@ func _process(delta):
 			var inst = notePrefab.instance()
 			inst.translate(Vector3(-1.5 + 1 * patternArray[patternProg], 10.2, -2.0))
 			add_child(inst)
+			allNotes.push_back(inst)
 			timer = 0.1
 			patternProg += 1
-	hit = check_note($"Hit Area", hit);
-	perfect = check_note($"Perfect Area", perfect);
+	
+	var xOffset = -1.5
+	var breakLoop = false
+
+	for note in allNotes:
+		for i in 4:
+			if note.translation.x == xOffset + i && Input.is_action_just_pressed("Line_" + str(i)):
+				print(getYDistance(note))
+				score += 1;
+				combo += 1;
+				allNotes.erase(note)
+				note.free();
+				breakLoop = true
+				break
+		if breakLoop:
+			break
 	update_ui()
 
 func update_ui():
-	$HitLabel.text = str(hit);
-	$PerfectLabel.text = str(perfect);
-	$ComboLabel.text = str(combo);
-	$BestComboLabel.text = str(best_combo);
+	pass
 
 func _input(event):
 	if event is InputEventKey:
@@ -74,31 +88,8 @@ func _input(event):
 					linesDisplay[y].visible = false
 					break
 
-func check_note(zone, score):
-	var notes = zone.get_overlapping_bodies();
-	
-	var xOffset = -1.5
-	var breakLoop = false
-	for note in notes:
-		for i in 4:
-			if note.translation.x == xOffset + i:
-				for y in 4:
-					if Input.is_action_pressed("Line_" + str(y)):
-						score += 1;
-						combo += 1;
-						if combo > best_combo:
-							best_combo = combo;
-						notes.erase(note)
-						note.free();
-						breakLoop = true
-						break
-			if breakLoop:
-				break
-	return(score);
-
 func _on_Miss_Area_body_entered(body):
 	if "Note" in body.name:
-		miss += 1;
 		combo = 0;
+		allNotes.erase(body)
 		body.free();
-		print("miss");

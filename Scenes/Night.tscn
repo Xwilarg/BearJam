@@ -57,40 +57,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.448635, -1.45142 )
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Perfect Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.641174, -1.45142 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Perfect Area"]
-transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
-shape = SubResource( 1 )
-
-[node name="Hit Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839842, -1.45142 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Hit Area"]
-transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0.385225, 0 )
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Hit Area"]
-
-[node name="HitLabel" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28034, 1.61947, -1 )
-pixel_size = 0.1
-text = "00"
-
-[node name="PerfectLabel" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28034, 3.12661, -1 )
-pixel_size = 0.1
-text = "00"
-
-[node name="ComboLabel" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28034, 4.71073, -1 )
-pixel_size = 0.1
-text = "00"
-
-[node name="BestComboLabel" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28034, 6.16905, -1 )
-pixel_size = 0.1
-text = "00"
-
 [connection signal="body_entered" from="Miss Area" to="." method="_on_Miss_Area_body_entered"]
