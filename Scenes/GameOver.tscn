@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Gravestone Classic.glb" type="PackedScene" id=1]
 [ext_resource path="res://assets/Dirt.glb" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=4]
 [ext_resource path="res://assets/Gravestone Coffin Shape.glb" type="PackedScene" id=5]
 [ext_resource path="res://assets/Gravestone Short.glb" type="PackedScene" id=6]
+[ext_resource path="res://assets/Witch Hat.glb" type="PackedScene" id=7]
+[ext_resource path="res://assets/Pumpkin.glb" type="PackedScene" id=8]
+[ext_resource path="res://assets/Rock1.glb" type="PackedScene" id=9]
+[ext_resource path="res://assets/Stump.glb" type="PackedScene" id=10]
+[ext_resource path="res://assets/Shovel.glb" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=4]
 
@@ -81,3 +86,21 @@ wanted to have
 a tombstone
 too"
 font = SubResource( 6 )
+
+[node name="Witch Hat" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.753332, 0.655976, 0.0467611, -0.644905, 0.722947, 0.247881, 0.128798, -0.216893, 0.967661, -0.813439, 0.466507, -2.05797 )
+
+[node name="Pumpkin" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 1.81124, 0.0098477, -1.09771 )
+
+[node name="Shovel" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.292639, 0.237027, 0.92638, 0, 0.968791, -0.247878, -0.956223, -0.0725388, -0.283506, 1.08471, -0.0646073, -1.7784 )
+
+[node name="Stump" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.633, 0.0078156, -4.19748 )
+
+[node name="Stump2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.442367, 0, 0.896834, 0, 1, 0, -0.896834, 0, 0.442367, 2.91438, 0.00500107, -7.43999 )
+
+[node name="Rock1" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76736, 0.0077008, -9.88688 )
