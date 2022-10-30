@@ -5,7 +5,7 @@ var combo = 0;
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 var linesDisplay: Array
-
+var gd = GameSytem
 
 var patternProg: int
 var patternRand: int
@@ -74,14 +74,14 @@ func _process(delta):
 				timer = 0
 				burst -= 1
 			else:
-				burst = rng.randi_range(0, 3)
-				timer = 0.5
+				burst = rng.randi_range(0, gd.maxBurst)
+				timer = gd.delayBetweenNotes * 5.0
 		else:
 			while true:
 				spawnNote()
 				#if getWaitingTime(currPattern) == 1:
 				break
-			timer = 0.1
+			timer = gd.delayBetweenNotes
 	
 	var xOffset = -1.5
 
@@ -90,7 +90,7 @@ func _process(delta):
 			for note in allNotes:
 				if note.translation.x == xOffset + i:
 					var dist = getYDistance(note)
-					if dist < 1:
+					if dist < gd.permissiveness:
 						score += 1;
 						combo += 1;
 					elif dist < 2:

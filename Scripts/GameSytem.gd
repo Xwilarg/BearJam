@@ -1,5 +1,10 @@
 extends Node
 
+export var permissiveness = 1.0 # How much error margin you have when clicking a note, must be < 2
+export var maxBurst = 3 # Number of patterns that can follow each others
+export var delayBetweenNotes = 0.1 # Number of seconds between each notes
+export var songDuration = 180 # Duration of the song
+
 var clock = Timer.new()
 
 var day_time = 0
