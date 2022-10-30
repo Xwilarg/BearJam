@@ -1,5 +1,6 @@
 extends Spatial
 
+var DayThemeSound   = preload("res://Sounds/day_theme.wav")
 
 var clock = Timer.new()
 
@@ -8,6 +9,7 @@ var note_speed = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer.stream = DayThemeSound
 	self.add_child(clock);
 	clock.one_shot = true;
 	clock.connect("timeout", self, "_change_to_night");
@@ -23,5 +25,7 @@ func _change_to_night():
 func get_time_left():
 	return clock.time_left;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	if !$AudioStreamPlayer.is_playing():
+		$AudioStreamPlayer.play()
 #	pass

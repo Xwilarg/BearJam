@@ -16086,9 +16086,6 @@ transform = Transform( -0.930366, 0, -0.366631, 0, 1, 0, 0.366631, 0, -0.930366,
 [node name="Rock_var3_13" parent="Map/Rocks" instance=ExtResource( 17 )]
 transform = Transform( -0.930366, 0, -0.366631, 0, 1, 0, 0.366631, 0, -0.930366, -59.4138, 0.319129, 228.89 )
 
-[node name="Rock_var1_14" parent="Map/Rocks" instance=ExtResource( 18 )]
-transform = Transform( 0.875447, 0, -0.483313, 0, 1, 0, 0.483313, 0, 0.875447, 1.12552, 0.317302, 0.203751 )
-
 [node name="Rock_var2_14" parent="Map/Rocks" instance=ExtResource( 16 )]
 transform = Transform( 0.875447, 0, -0.483313, 0, 1, 0, 0.483313, 0, 0.875447, 60.439, 0.31914, 256.005 )
 
@@ -16475,3 +16472,5 @@ transform = Transform( 0.308436, 0, -0.951245, 0, 1, 0, 0.951245, 0, 0.308436, -
 
 [node name="Old Fashioned Coffin" parent="." instance=ExtResource( 34 )]
 transform = Transform( 0.875481, 0, -0.483252, 0, 1, 0, 0.483252, 0, 0.875481, -189.632, 0.321616, 346.198 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
