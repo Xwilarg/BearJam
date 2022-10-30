@@ -99,7 +99,8 @@ func _process(delta):
 	musicTimer -= delta
 	timerLabel.text = "%.2f" % musicTimer
 	if musicTimer <= 0.0:
-		pass # End of the game
+		GameSytem.finalScore = ((nbGreat * 300) + (nbGood * 100) + (nbBad * 50)) * GameSytem.permissiveness
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 	timer -= delta
 	if timer <= 0.0:
