@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Tree_var1_0.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Prefabs/Rock_var1_0.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Prefabs/Candy_var1_0.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Prefabs/Candy_var2_0.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Prefabs/Spikes.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Prefabs/Fences.tscn" type="PackedScene" id=22]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -29,19 +31,19 @@ albedo_color = Color( 0.156863, 0.384314, 0, 1 )
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.203922, 0.180392, 0.156863, 1 )
 
 [sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
+material = SubResource( 9 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.486275, 0.482353, 0.458824, 1 )
 
 [sub_resource type="CubeMesh" id=7]
-material = SubResource( 6 )
+material = SubResource( 10 )
 
-[sub_resource type="ProceduralSky" id=9]
+[sub_resource type="ProceduralSky" id=11]
 sky_top_color = Color( 0.945098, 0.941176, 0.647059, 1 )
 sky_horizon_color = Color( 1, 0.713726, 0.309804, 1 )
 sun_color = Color( 1, 0.513726, 0, 1 )
@@ -49,7 +51,7 @@ sun_latitude = 168.38
 
 [sub_resource type="Environment" id=8]
 background_mode = 2
-background_sky = SubResource( 9 )
+background_sky = SubResource( 11 )
 ambient_light_color = Color( 0.611765, 0.611765, 0.611765, 1 )
 ambient_light_energy = 0.5
 fog_color = Color( 0.494118, 0.494118, 0.494118, 1 )
@@ -61,7 +63,7 @@ fog_depth_curve = 2.92817
 fog_height_min = 3.0
 fog_height_curve = 33.1285
 
-[node name="Spatial" type="Spatial"]
+[node name="Day" type="Spatial"]
 script = ExtResource( 9 )
 
 [node name="Map" type="Spatial" parent="."]
@@ -75,6 +77,359 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Floor/CollisionShape"]
 mesh = SubResource( 2 )
+
+[node name="Spikes" type="Spatial" parent="Map"]
+visible = false
+
+[node name="Spikes_0" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9868, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_1" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8638, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_2" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7491, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_3" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.626, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_7" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.673, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_8" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7961, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_12" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9108, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_13" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0339, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_4" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46758, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_5" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34449, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_6" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22983, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_9" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55017, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_10" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66483, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_11" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78792, 4.76837e-07, 20.4995 )
+
+[node name="Spikes_14" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9868, 4.76837e-07, -20.706 )
+
+[node name="Spikes_15" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8638, 4.76837e-07, -20.706 )
+
+[node name="Spikes_16" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7491, 4.76837e-07, -20.706 )
+
+[node name="Spikes_17" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.626, 4.76837e-07, -20.706 )
+
+[node name="Spikes_18" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.673, 4.76837e-07, -20.706 )
+
+[node name="Spikes_19" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7961, 4.76837e-07, -20.706 )
+
+[node name="Spikes_20" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9108, 4.76837e-07, -20.706 )
+
+[node name="Spikes_21" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0339, 4.76837e-07, -20.706 )
+
+[node name="Spikes_22" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46758, 4.76837e-07, -20.706 )
+
+[node name="Spikes_23" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34449, 4.76837e-07, -20.706 )
+
+[node name="Spikes_24" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22983, 4.76837e-07, -20.706 )
+
+[node name="Spikes_25" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55017, 4.76837e-07, -20.706 )
+
+[node name="Spikes_26" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66483, 4.76837e-07, -20.706 )
+
+[node name="Spikes_27" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78792, 4.76837e-07, -20.706 )
+
+[node name="Spikes_28" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2713, 1.43051e-06, 18.7255 )
+
+[node name="Spikes_29" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2733, 1.43051e-06, 16.6024 )
+
+[node name="Spikes_30" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2754, 1.43051e-06, 14.4878 )
+
+[node name="Spikes_31" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2774, 1.43051e-06, 12.3647 )
+
+[node name="Spikes_32" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.3017, 1.43051e-06, -12.9343 )
+
+[node name="Spikes_33" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.3037, 1.43051e-06, -15.0574 )
+
+[node name="Spikes_34" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.3058, 1.43051e-06, -17.1721 )
+
+[node name="Spikes_35" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.3078, 1.43051e-06, -19.2951 )
+
+[node name="Spikes_36" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2833, 1.43051e-06, 6.20628 )
+
+[node name="Spikes_37" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2854, 1.43051e-06, 4.08319 )
+
+[node name="Spikes_38" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2874, 1.43051e-06, 1.96853 )
+
+[node name="Spikes_39" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.292, 1.43051e-06, -2.81146 )
+
+[node name="Spikes_40" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.294, 1.43051e-06, -4.92612 )
+
+[node name="Spikes_41" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, -20.2961, 1.43051e-06, -7.04921 )
+
+[node name="Spikes_42" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2583, 1.43051e-06, 18.7255 )
+
+[node name="Spikes_56" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 0.52516, 0, 0.851004, 0, 1, 0, -0.851004, 0, 0.52516, 20.1351, 1.43051e-06, 20.1037 )
+
+[node name="Spikes_57" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( 0.52516, 0, 0.851004, 0, 1, 0, -0.851004, 0, 0.52516, -20.46, 1.43051e-06, -20.5855 )
+
+[node name="Spikes_58" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.504166, 0, 0.863607, 0, 1, 0, -0.863607, 0, -0.504166, 20.405, 1.43051e-06, -20.6486 )
+
+[node name="Spikes_59" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.271524, 0, 0.962432, 0, 1, 0, -0.962432, 0, -0.271524, -20.6033, 1.43051e-06, 19.9544 )
+
+[node name="Spikes_43" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2563, 1.43051e-06, 16.6024 )
+
+[node name="Spikes_44" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2543, 1.43051e-06, 14.4878 )
+
+[node name="Spikes_45" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2522, 1.43051e-06, 12.3647 )
+
+[node name="Spikes_46" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2279, 1.43051e-06, -12.9343 )
+
+[node name="Spikes_47" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2259, 1.43051e-06, -15.0574 )
+
+[node name="Spikes_48" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2239, 1.43051e-06, -17.1721 )
+
+[node name="Spikes_49" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2218, 1.43051e-06, -19.2951 )
+
+[node name="Spikes_50" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2463, 1.43051e-06, 6.20628 )
+
+[node name="Spikes_51" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2443, 1.43051e-06, 4.08319 )
+
+[node name="Spikes_52" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2422, 1.43051e-06, 1.96853 )
+
+[node name="Spikes_53" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2376, 1.43051e-06, -2.81146 )
+
+[node name="Spikes_54" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2356, 1.43051e-06, -4.92612 )
+
+[node name="Spikes_55" parent="Map/Spikes" instance=ExtResource( 21 )]
+transform = Transform( -0.000959917, 0, 1, 0, 1, 0, -1, 0, -0.000959917, 20.2336, 1.43051e-06, -7.04921 )
+
+[node name="Fences" type="Spatial" parent="Map"]
+
+[node name="Fence_0" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2206, 0.0051198, 20.4555 )
+
+[node name="Fence_1" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1529, 0.0051198, 20.4555 )
+
+[node name="Fence_2" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1209, 0.0051198, 20.4555 )
+
+[node name="Fence_4" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37875, 0.0051198, 20.4555 )
+
+[node name="Fence_5" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3111, 0.0051198, 20.4555 )
+
+[node name="Fence_6" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27909, 0.0051198, 20.4555 )
+
+[node name="Fence_7" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65803, 0.0051198, 20.4555 )
+
+[node name="Fence_8" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72568, 0.0051198, 20.4555 )
+
+[node name="Fence_9" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75769, 0.0051198, 20.4555 )
+
+[node name="Fence_3" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0533, 0.0051198, 20.4555 )
+
+[node name="Fence_10" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9007, 0.0051198, 20.4555 )
+
+[node name="Fence_11" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9683, 0.0051198, 20.4555 )
+
+[node name="Fence_12" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0003, 0.0051198, 20.4555 )
+
+[node name="Fence_13" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.068, 0.0051198, 20.4555 )
+
+[node name="Fence_14" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2206, 0.0051198, -20.2208 )
+
+[node name="Fence_15" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1529, 0.0051198, -20.2208 )
+
+[node name="Fence_16" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1209, 0.0051198, -20.2208 )
+
+[node name="Fence_17" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37875, 0.0051198, -20.2208 )
+
+[node name="Fence_18" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3111, 0.0051198, -20.2208 )
+
+[node name="Fence_19" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27909, 0.0051198, -20.2208 )
+
+[node name="Fence_20" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65803, 0.0051198, -20.2208 )
+
+[node name="Fence_21" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72568, 0.0051198, -20.2208 )
+
+[node name="Fence_22" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75769, 0.0051198, -20.2208 )
+
+[node name="Fence_23" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0533, 0.0051198, -20.2208 )
+
+[node name="Fence_24" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9007, 0.0051198, -20.2208 )
+
+[node name="Fence_25" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9683, 0.0051198, -20.2208 )
+
+[node name="Fence_26" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0003, 0.0051198, -20.2208 )
+
+[node name="Fence_27" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.068, 0.0051198, -20.2208 )
+
+[node name="Fence_28" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0841, 0.00512004, 19.4614 )
+
+[node name="Fence_29" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0799, 0.00512004, 17.3938 )
+
+[node name="Fence_30" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0758, 0.00512004, 15.3618 )
+
+[node name="Fence_31" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0581, 0.00512004, 6.61962 )
+
+[node name="Fence_32" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0539, 0.00512004, 4.55198 )
+
+[node name="Fence_33" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0498, 0.00512004, 2.51997 )
+
+[node name="Fence_34" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0398, 0.00512004, -2.41714 )
+
+[node name="Fence_35" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0356, 0.00512004, -4.48478 )
+
+[node name="Fence_36" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0315, 0.00512004, -6.51679 )
+
+[node name="Fence_37" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0716, 0.00512004, 13.2941 )
+
+[node name="Fence_38" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0778, 0.00512004, -13.0194 )
+
+[node name="Fence_39" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0736, 0.00512004, -15.0871 )
+
+[node name="Fence_40" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0695, 0.00512004, -17.1191 )
+
+[node name="Fence_41" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, 20.0653, 0.00512004, -19.1867 )
+
+[node name="Fence_42" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2657, 0.00512004, 19.4614 )
+
+[node name="Fence_43" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2698, 0.00512004, 17.3938 )
+
+[node name="Fence_44" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.274, 0.00512004, 15.3618 )
+
+[node name="Fence_45" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2917, 0.00512004, 6.61962 )
+
+[node name="Fence_46" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2958, 0.00512004, 4.55198 )
+
+[node name="Fence_47" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.3, 0.00512004, 2.51997 )
+
+[node name="Fence_48" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.31, 0.00512004, -2.41714 )
+
+[node name="Fence_49" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.3141, 0.00512004, -4.48478 )
+
+[node name="Fence_50" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.3183, 0.00512004, -6.51679 )
+
+[node name="Fence_51" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2782, 0.00512004, 13.2941 )
+
+[node name="Fence_52" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.272, 0.00512004, -13.0194 )
+
+[node name="Fence_53" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2762, 0.00512004, -15.0871 )
+
+[node name="Fence_54" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2803, 0.00512004, -17.1191 )
+
+[node name="Fence_55" parent="Map/Fences" instance=ExtResource( 22 )]
+transform = Transform( -0.00202457, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00202457, -20.2845, 0.00512004, -19.1867 )
 
 [node name="forest" type="Node" parent="Map"]
 
@@ -14900,7 +15255,7 @@ transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -
 
 [node name="Squirrel" parent="Map/NPCs" instance=ExtResource( 12 )]
 transform = Transform( 0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.82873, 0.319478, -6.39633 )
-text_to_show = "Wood"
+text_to_show = "Squeak squeak\\nAll of these loosers don't know what will befall into them, give me wood, I make fortifications!"
 
 [node name="Deer buck" parent="Map/NPCs" instance=ExtResource( 13 )]
 transform = Transform( -0.661953, 0, -0.749545, 0, 1, 0, 0.749545, 0, -0.661953, 4.34177, 0.317624, 2.49565 )

@@ -15,6 +15,9 @@ var residents_ressources = [0, 0, 0, 0];
 func _ready():
 	pass # Replace with function body.
 
+func go_to_scene(path):
+	get_tree().change_scene(path)
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
