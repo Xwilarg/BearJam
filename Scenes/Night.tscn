@@ -64,9 +64,31 @@ modulate = Color( 0, 0, 0, 1 )
 outline_modulate = Color( 1, 1, 1, 1 )
 
 [node name="TimerLabel" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92294, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92294, -2.00883 )
 pixel_size = 0.05
 modulate = Color( 0, 0, 0, 1 )
 text = "0.00"
+
+[node name="LineKey" type="Spatial" parent="."]
+
+[node name="S" type="Label3D" parent="LineKey"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.528442, -2.009 )
+pixel_size = 0.05
+text = "S"
+
+[node name="D" type="Label3D" parent="LineKey"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.528, -2.009 )
+pixel_size = 0.05
+text = "D"
+
+[node name="K" type="Label3D" parent="LineKey"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.528, -2.009 )
+pixel_size = 0.05
+text = "K"
+
+[node name="L" type="Label3D" parent="LineKey"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.528, -2.009 )
+pixel_size = 0.05
+text = "L"
 
 [connection signal="body_entered" from="Miss Area" to="." method="_on_Miss_Area_body_entered"]
