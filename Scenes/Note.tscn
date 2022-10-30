@@ -10,6 +10,7 @@
 albedo_color = Color( 0.898039, 0.133333, 0.85098, 1 )
 
 [node name="Note" type="KinematicBody"]
+collision_layer = 0
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
