@@ -63,4 +63,10 @@ pixel_size = 0.1
 modulate = Color( 0, 0, 0, 1 )
 outline_modulate = Color( 1, 1, 1, 1 )
 
+[node name="TimerLabel" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92294, 0 )
+pixel_size = 0.05
+modulate = Color( 0, 0, 0, 1 )
+text = "0.00"
+
 [connection signal="body_entered" from="Miss Area" to="." method="_on_Miss_Area_body_entered"]

@@ -17,6 +17,7 @@ var timer = 1
 var burst = 0
 
 var comboLabel: Object
+var timerLabel: Object
 
 var allNotes = []
 
@@ -25,6 +26,7 @@ var musicTimer: float
 func _ready():
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 	comboLabel = $ComboLabel
+	timerLabel = $TimerLabel
 	musicTimer = GameSytem.songDuration
 
 enum Pattern { Stair, Ladder, Funnel }
@@ -69,6 +71,7 @@ func spawnNote():
 
 func _process(delta):
 	musicTimer -= delta
+	timerLabel.text = "%.2f" % musicTimer
 	if musicTimer <= 0.0:
 		pass # End of the game
 
