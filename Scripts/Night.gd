@@ -153,6 +153,8 @@ func _input(event):
 
 func _on_Miss_Area_body_entered(body):
 	if "Note" in body.name:
+		nbMiss += 1
 		combo = 0;
 		allNotes.erase(body)
-		body.free();
+		body.free()
+		update_ui()
