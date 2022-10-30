@@ -17,3 +17,7 @@ func _input(event):
 				get_tree().change_scene("res://Scenes/Day.tscn")
 			elif name == "Credits":
 				$Credits/Text.visible = !$Credits/Text.visible
+				$Credits/Secret.visible = false
+			elif name == "Secret":
+				$Credits/Secret.visible = !$Credits/Secret.visible
+				$Credits/Text.visible = false
