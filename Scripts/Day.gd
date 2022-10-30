@@ -11,7 +11,7 @@ func _ready():
 	self.add_child(clock);
 	clock.one_shot = true;
 	clock.connect("timeout", self, "_change_to_night");
-	clock.start(4);
+	clock.start(480);
 	pass # Replace with function body.
 
 func _change_to_night():

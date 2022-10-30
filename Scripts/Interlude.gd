@@ -9,6 +9,3 @@ func _ready():
 	rockLabel.text = "Towers: " + str(GameSytem.rock()) + " rocks,\nmax number of pattern bursts of " + str(GameSytem.maxBurst)
 	scrapLabel.text = "Speakers: " + str(GameSytem.scrap()) + " scraps,\ndelay between notes of " + str(GameSytem.delayBetweenNotes) + " seconds"
 	candyLabel.text = "Spotlights: " + str(GameSytem.candy()) + " candies,\ndistance to hit a note of " + ("%.2f" % GameSytem.permissiveness) + " cm"
-
-func _on_Button_pressed():
-	GameSytem.go_to_scene("res://Scenes/Night.tscn");

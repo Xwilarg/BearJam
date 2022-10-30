@@ -58,6 +58,7 @@ script = ExtResource( 2 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5 )
 projection = 1
+current = true
 size = 10.0
 
 [node name="Line1" type="Sprite3D" parent="."]
