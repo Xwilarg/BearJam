@@ -42,8 +42,10 @@ fog_depth_curve = 2.92817
 fog_height_min = 3.0
 fog_height_curve = 33.1285
 
-[sub_resource type="DynamicFont" id=14]
-size = 40
+[sub_resource type="DynamicFont" id=17]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=15]
@@ -58,10 +60,8 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=17]
-size = 25
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
+[sub_resource type="DynamicFont" id=14]
+size = 40
 font_data = ExtResource( 8 )
 
 [node name="Interlude" type="Spatial"]
@@ -155,20 +155,27 @@ light_color = Color( 0.796078, 1, 0.972549, 1 )
 light_energy = 0.1
 shadow_enabled = true
 
-[node name="UI" type="Control" parent="."]
+[node name="UI2" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Button" type="Button" parent="UI"]
+[node name="Label" type="Label" parent="UI2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 600.0
-margin_top = 500.0
-custom_fonts/font = SubResource( 14 )
-text = "Switch to Night"
-__meta__ = {
-"_editor_description_": ""
-}
+margin_top = 100.0
+margin_right = -15.0
+custom_fonts/font = SubResource( 17 )
+text = "And you were the bad guy all along!
+You now have to enter the village
+to eat all these delicious animals
+
+The next part is played like a rhythm game
+Use S D K L to hit the note at the right time"
+align = 2
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 margin_right = 40.0
@@ -239,22 +246,15 @@ custom_fonts/font = SubResource( 16 )
 text = "Night is coming"
 align = 2
 
-[node name="UI2" type="Control" parent="."]
+[node name="Button" type="Button" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="UI2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 100.0
-margin_right = -15.0
-custom_fonts/font = SubResource( 17 )
-text = "And you were the bad guy all along!
-You now have to enter the village
-to eat all these delicious animals
-
-The next part is played like a rhythm game
-Use S D K L to hit the note at the right time"
-align = 2
+margin_left = 600.0
+margin_top = 500.0
+custom_fonts/font = SubResource( 14 )
+text = "Switch to Night"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]
