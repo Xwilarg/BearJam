@@ -1,9 +1,13 @@
-extends StaticBody
+extends Spatial
 
 class_name NPC
 
 var resId : int
 var myResources = 0
+export var text_to_show = "";
+
+func _ready():
+	$Label3D.text = text_to_show;
 
 func _on_Area_body_entered(body):
 	if body.name == "Player":
