@@ -19,9 +19,9 @@ var woodcutting = -1;
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	label = get_node("Label")
-	objLabels = [ $Inventory/VBoxContainer/WoodLabel, $Inventory/VBoxContainer/RockLabel, $Inventory/VBoxContainer/ScrapLabel, $Inventory/VBoxContainer/CandyLabel ]
-	resources = [ 0, 0, 0, 0]
-	labelText = [ "Wood: ", "Rock: ", "Scrap: ", "Candy: " ]
+	objLabels = [ $Inventory/VBoxContainer/WoodLabel, $Inventory/VBoxContainer/RockLabel, $Inventory/VBoxContainer/ScrapLabel, $Inventory/VBoxContainer/CandyLabel, $Inventory/VBoxContainer/TimeLabel ]
+	resources = [ 0, 0, 0, 0, 0]
+	labelText = [ "Wood: ", "Rock: ", "Scrap: ", "Candy: ", "Time left: "  ]
 
 func _physics_process(delta):
 	var x = 0
@@ -51,7 +51,6 @@ func _physics_process(delta):
 					resources[ResourceType.WOOD] += 1
 					objTarget.free()
 					reset()
-					updateUI()
 		elif "Waste" in target.name:
 			label.show()
 			label.set_text("Spam Space to clean up")
@@ -62,10 +61,9 @@ func _physics_process(delta):
 					resources[ResourceType.SCRAP] += 1
 					objTarget.free()
 					reset()
-					updateUI()
 		elif "Rock" in target.name:
 			label.show()
-			label.set_text("Hold Spacebar to chip it with claws")
+			label.set_text("Hold Spacebar to grab it with claws")
 			objTarget = target
 			if Input.is_action_pressed("action_spacebar"):
 				actionCounter += 1
@@ -73,7 +71,6 @@ func _physics_process(delta):
 					resources[ResourceType.ROCK] += 1
 					objTarget.free()
 					reset()
-					updateUI()
 		elif "Candy" in target.name:
 			label.show()
 			label.set_text("Space: Pickup")
@@ -82,9 +79,9 @@ func _physics_process(delta):
 				resources[ResourceType.CANDY] += 1
 				objTarget.free()
 				reset()
-				updateUI()
 	else:
 		reset()
+	updateUI()
 
 func emptyResource(type: int) -> int:
 	var count = resources[type]
@@ -93,6 +90,7 @@ func emptyResource(type: int) -> int:
 	return count
 
 func updateUI():
+	resources[4] = int(get_parent().get_time_left());
 	for i in resources.size():
 		objLabels[i].text = labelText[i] + str(resources[i])
 

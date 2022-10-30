@@ -15255,22 +15255,22 @@ transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -
 
 [node name="Squirrel" parent="Map/NPCs" instance=ExtResource( 12 )]
 transform = Transform( 0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.82873, 0.319478, -6.39633 )
-text_to_show = "Squeak squeak\\nAll of these loosers don't know what will befall into them, give me wood, I make fortifications!"
+text_to_show = "Squeak squeak! All of these loosers don't know what will befall into them, give me wood, I make fortifications!"
 
 [node name="Deer buck" parent="Map/NPCs" instance=ExtResource( 13 )]
 transform = Transform( -0.661953, 0, -0.749545, 0, 1, 0, 0.749545, 0, -0.661953, 4.34177, 0.317624, 2.49565 )
-text_to_show = "Scraps"
-ressouces_type = 2
+text_to_show = "AAaaaaaa! Ah no sorry, that's just the sound stags make, erm anyway, bring me rock and I make towers, you know, for high ground and stuff"
+ressouces_type = 1
 
 [node name="Deer doe" parent="Map/NPCs" instance=ExtResource( 15 )]
 transform = Transform( -0.596505, 0, 0.802609, 0, 1, 0, -0.802609, 0, -0.596505, -8.29714, 0.32202, 2.83388 )
-text_to_show = "Candy"
+text_to_show = "Nom nom...I am the most clever deer of the village and that made me understand capitalism, so if you pay me with candies I'll build spotlights"
 ressouces_type = 3
 
 [node name="Scarecrow" parent="Map/NPCs" instance=ExtResource( 14 )]
 transform = Transform( 0.741952, 0, 0.670453, 0, 1, 0, -0.670453, 0, 0.741952, -9.51099, 0.321976, -6.7447 )
-text_to_show = "Stone"
-ressouces_type = 1
+text_to_show = "Yo boy! I am totally human and need human scraps to make human speakers to play human music"
+ressouces_type = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7337, 0.0200014, 6.40382 )
