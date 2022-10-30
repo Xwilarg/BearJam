@@ -13,6 +13,7 @@ var actionCounter = 0
 var objLabels : Array
 var resources : Array
 var labelText: Array
+var woodcutting = -1;
 
 
 func _ready():
@@ -42,17 +43,46 @@ func _physics_process(delta):
 	if target:
 		if "Tree" in target.name:
 			label.show()
-			label.set_text("Spam Spacebar")
+			label.set_text("Spam K and L to cut down")
 			objTarget = target
-			if Input.is_action_pressed("action_spacebar"):
+			if Input.is_action_just_pressed("Line_2") && woodcutting == -1 || Input.is_action_just_pressed("Line_3") && woodcutting == 1:
 				actionCounter += 1
-				if actionCounter == 20:
+				if actionCounter == 10:
 					resources[ResourceType.WOOD] += 1
 					objTarget.free()
 					reset()
 					updateUI()
-		else:
-			reset()
+		elif "Waste" in target.name:
+			label.show()
+			label.set_text("Spam Space to clean up")
+			objTarget = target
+			if Input.is_action_just_pressed("action_spacebar"):
+				actionCounter += 1
+				if actionCounter == 3:
+					resources[ResourceType.SCRAP] += 1
+					objTarget.free()
+					reset()
+					updateUI()
+		elif "Rock" in target.name:
+			label.show()
+			label.set_text("Hold Spacebar to chip it with claws")
+			objTarget = target
+			if Input.is_action_pressed("action_spacebar"):
+				actionCounter += 1
+				if actionCounter == 30:
+					resources[ResourceType.ROCK] += 1
+					objTarget.free()
+					reset()
+					updateUI()
+		elif "Candy" in target.name:
+			label.show()
+			label.set_text("Space: Pickup")
+			objTarget = target
+			if Input.is_action_pressed("action_spacebar"):
+				resources[ResourceType.CANDY] += 1
+				objTarget.free()
+				reset()
+				updateUI()
 	else:
 		reset()
 
