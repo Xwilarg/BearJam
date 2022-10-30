@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Tree_var1_0.tscn" type="PackedScene" id=2]
@@ -9,6 +9,17 @@
 [ext_resource path="res://Prefabs/Tree_var3_0.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/Tree_var2_0.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Day.gd" type="Script" id=9]
+[ext_resource path="res://Prefabs/Waste_var1_0.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/Waste_var2_0.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Squirrel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Deer buck.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Scarecrow.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Deer doe.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Rock_var2_0.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Prefabs/Rock_var3_0.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Prefabs/Rock_var1_0.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/Candy_var1_0.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Prefabs/Candy_var2_0.tscn" type="PackedScene" id=20]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -80,7 +91,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09226, 0.316566, 37.7172 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98082, 0.316566, 29.2664 )
 
 [node name="Tree_var3_4" parent="Map/forest" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8806, 0.316566, 34.4568 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.316566, 31.6606 )
 
 [node name="Tree_var1_0" parent="Map/forest" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1418, 0.316566, 23.365 )
@@ -14516,8 +14527,398 @@ transform = Transform( -1.64072, 0, 1.14369, 0, 1, 0, -1.14369, 0, -1.64072, -15
 [node name="blocker_var3_1163" parent="Map/Blockers" instance=ExtResource( 6 )]
 transform = Transform( -1.64072, 0, 1.14369, 0, 1, 0, -1.14369, 0, -1.64072, -155.664, 0.317245, -141.644 )
 
+[node name="Wastes" type="Node" parent="Map"]
+
+[node name="Waste_var1_0" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8148, 0.317225, 100.943 )
+
+[node name="Waste_var2_0" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1873, 0.320389, 95.3298 )
+
+[node name="Waste_var1_1" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.18402, 0, 0.982922, 0, 1, 0, -0.982922, 0, 0.18402, 77.101, 0.317225, 104.131 )
+
+[node name="Waste_var2_1" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.18402, 0, 0.982922, 0, 1, 0, -0.982922, 0, 0.18402, 69.4146, 0.320389, 104.084 )
+
+[node name="Waste_var1_2" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, 82.095, 0.317225, 98.7876 )
+
+[node name="Waste_var2_2" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, 77.9943, 0.320389, 99.0982 )
+
+[node name="Waste_var1_3" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, 70.1886, 0.317226, 96.2789 )
+
+[node name="Waste_var2_3" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, 65.4392, 0.320389, 94.2146 )
+
+[node name="Waste_var1_4" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6217, 0.317225, 191.589 )
+
+[node name="Waste_var2_4" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2492, 0.320389, 185.975 )
+
+[node name="Waste_var1_5" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.18402, 0, 0.982922, 0, 1, 0, -0.982922, 0, 0.18402, -7.33549, 0.317225, 194.777 )
+
+[node name="Waste_var2_5" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.18402, 0, 0.982922, 0, 1, 0, -0.982922, 0, 0.18402, -15.0219, 0.320389, 194.729 )
+
+[node name="Waste_var1_6" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, -2.34148, 0.317225, 189.433 )
+
+[node name="Waste_var2_6" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, -6.44225, 0.320389, 189.744 )
+
+[node name="Waste_var1_7" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, -14.2479, 0.317226, 186.924 )
+
+[node name="Waste_var2_7" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.547023, 0, 0.837118, 0, 1, 0, -0.837118, 0, -0.547023, -18.9973, 0.320389, 184.86 )
+
+[node name="Waste_var1_8" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -6.52825, 0.317225, 198.794 )
+
+[node name="Waste_var2_8" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -7.56464, 0.320389, 204.479 )
+
+[node name="Waste_var1_9" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -10.9964, 0.317225, 195.866 )
+
+[node name="Waste_var2_9" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -3.32076, 0.320389, 195.456 )
+
+[node name="Waste_var1_10" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -15.6639, 0.317225, 201.497 )
+
+[node name="Waste_var2_10" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -11.5888, 0.320389, 200.943 )
+
+[node name="Waste_var1_11" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -3.62936, 0.317226, 203.294 )
+
+[node name="Waste_var2_11" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, 1.23435, 0.320389, 205.072 )
+
+[node name="Waste_var1_12" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -133.343, 0.317225, 183.646 )
+
+[node name="Waste_var2_12" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -134.379, 0.320389, 189.331 )
+
+[node name="Waste_var1_13" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -137.811, 0.317225, 180.718 )
+
+[node name="Waste_var2_13" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -130.135, 0.320389, 180.308 )
+
+[node name="Waste_var1_14" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -142.479, 0.317225, 186.349 )
+
+[node name="Waste_var2_14" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -138.404, 0.320389, 185.795 )
+
+[node name="Waste_var1_15" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -130.444, 0.317226, 188.146 )
+
+[node name="Waste_var2_15" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -125.58, 0.320389, 189.924 )
+
+[node name="Waste_var1_16" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -124.098, 0.317225, 175.274 )
+
+[node name="Waste_var2_16" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.998232, 0, -0.0594457, 0, 1, 0, 0.0594457, 0, -0.998232, -125.134, 0.320389, 180.959 )
+
+[node name="Waste_var1_17" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -128.566, 0.317225, 172.346 )
+
+[node name="Waste_var2_17" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.125264, 0, -0.992123, 0, 1, 0, 0.992123, 0, -0.125264, -120.89, 0.320389, 171.937 )
+
+[node name="Waste_var1_18" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -133.233, 0.317225, 177.977 )
+
+[node name="Waste_var2_18" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -129.158, 0.320389, 177.424 )
+
+[node name="Waste_var1_19" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -121.199, 0.317226, 179.774 )
+
+[node name="Waste_var2_19" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.595818, 0, -0.803119, 0, 1, 0, 0.803119, 0, 0.595818, -116.335, 0.320389, 181.552 )
+
+[node name="Waste_var1_20" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.961713, 0, -0.27406, 0, 1, 0, 0.27406, 0, -0.961713, -212.399, 0.317225, 227.918 )
+
+[node name="Waste_var2_20" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.961713, 0, -0.27406, 0, 1, 0, 0.27406, 0, -0.961713, -212.181, 0.320389, 233.693 )
+
+[node name="Waste_var1_21" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.0924052, 0, -0.995721, 0, 1, 0, 0.995721, 0, 0.0924052, -217.395, 0.317225, 226.027 )
+
+[node name="Waste_var2_21" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.0924052, 0, -0.995721, 0, 1, 0, 0.995721, 0, 0.0924052, -209.99, 0.320389, 223.966 )
+
+[node name="Waste_var1_22" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.755499, 0, -0.65515, 0, 1, 0, 0.65515, 0, 0.755499, -220.733, 0.317225, 232.534 )
+
+[node name="Waste_var2_22" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.755499, 0, -0.65515, 0, 1, 0, 0.65515, 0, 0.755499, -216.875, 0.320389, 231.112 )
+
+[node name="Waste_var1_23" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.755499, 0, -0.65515, 0, 1, 0, 0.65515, 0, 0.755499, -208.595, 0.317226, 231.684 )
+
+[node name="Waste_var2_23" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.755499, 0, -0.65515, 0, 1, 0, 0.65515, 0, 0.755499, -203.462, 0.320389, 232.368 )
+
+[node name="Waste_var1_24" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.944359, 0, 0.328916, 0, 1, 0, -0.328916, 0, 0.944359, -210.881, 0.317225, 243.764 )
+
+[node name="Waste_var2_24" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.944359, 0, 0.328916, 0, 1, 0, -0.328916, 0, 0.944359, -211.431, 0.320389, 238.011 )
+
+[node name="Waste_var1_25" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.149518, 0, 0.988759, 0, 1, 0, -0.988759, 0, -0.149518, -205.785, 0.317225, 245.365 )
+
+[node name="Waste_var2_25" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.149518, 0, 0.988759, 0, 1, 0, -0.988759, 0, -0.149518, -213.059, 0.320389, 247.848 )
+
+[node name="Waste_var1_26" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -202.826, 0.317225, 238.676 )
+
+[node name="Waste_var2_26" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -206.597, 0.320389, 240.318 )
+
+[node name="Waste_var1_27" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -214.895, 0.317226, 240.223 )
+
+[node name="Waste_var2_27" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -220.06, 0.320389, 239.836 )
+
+[node name="Waste_var1_28" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( 0.944359, 0, 0.328916, 0, 1, 0, -0.328916, 0, 0.944359, -187.228, 0.317225, 88.9641 )
+
+[node name="Waste_var2_28" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( 0.944359, 0, 0.328916, 0, 1, 0, -0.328916, 0, 0.944359, -187.778, 0.320389, 83.2117 )
+
+[node name="Waste_var1_29" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.149518, 0, 0.988759, 0, 1, 0, -0.988759, 0, -0.149518, -182.132, 0.317225, 90.5649 )
+
+[node name="Waste_var2_29" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.149518, 0, 0.988759, 0, 1, 0, -0.988759, 0, -0.149518, -189.406, 0.320389, 93.0486 )
+
+[node name="Waste_var1_30" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -179.173, 0.317225, 83.8761 )
+
+[node name="Waste_var2_30" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -182.943, 0.320389, 85.5182 )
+
+[node name="Waste_var1_31" parent="Map/Wastes" instance=ExtResource( 10 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -191.242, 0.317226, 85.4232 )
+
+[node name="Waste_var2_31" parent="Map/Wastes" instance=ExtResource( 11 )]
+transform = Transform( -0.791927, 0, 0.610615, 0, 1, 0, -0.610615, 0, -0.791927, -196.406, 0.320389, 85.036 )
+
+[node name="Rocks" type="Node" parent="Map"]
+
+[node name="Rock_var1_0" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3981, 0.317305, -41.2211 )
+
+[node name="Rock_var2_0" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8428, 0.319143, -37.4321 )
+
+[node name="Rock_var3_0" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4103, 0.319132, -36.8124 )
+
+[node name="Rock_var1_1" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, 26.4725, 0.317303, -33.9243 )
+
+[node name="Rock_var2_1" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, 31.5867, 0.319141, -34.1844 )
+
+[node name="Rock_var3_1" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, 29.2545, 0.31913, -30.3645 )
+
+[node name="Rock_var1_2" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, 31.2364, 0.317303, -37.7903 )
+
+[node name="Rock_var2_2" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, 27.7767, 0.319141, -41.5657 )
+
+[node name="Rock_var3_2" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, 32.2067, 0.31913, -42.2028 )
+
+[node name="Rock_var1_3" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.6416, 0.317304, -30.4028 )
+
+[node name="Rock_var2_3" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9504, 0.319142, -25.8447 )
+
+[node name="Rock_var3_3" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.6293, 0.319131, -25.9941 )
+
+[node name="Rock_var1_4" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, -51.3647, 0.317301, -30.2341 )
+
+[node name="Rock_var2_4" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, -45.0123, 0.31914, -41.2092 )
+
+[node name="Rock_var3_4" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 0.634245, 0, 0.773132, 0, 1, 0, -0.773132, 0, 0.634245, -28.7851, 0.319129, -19.5461 )
+
+[node name="Rock_var1_5" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, -26.8033, 0.317302, -26.972 )
+
+[node name="Rock_var2_5" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, -39.7481, 0.31914, -29.9441 )
+
+[node name="Rock_var3_5" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( -0.999992, 0, -0.0039444, 0, 1, 0, 0.0039444, 0, -0.999992, -25.8329, 0.319129, -31.3845 )
+
+[node name="Rock_var1_6" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 0.999932, 0, 0.0116236, 0, 1, 0, -0.0116236, 0, 0.999932, -43.135, 0.317306, -22.5702 )
+
+[node name="Rock_var2_6" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 0.999932, 0, 0.0116236, 0, 1, 0, -0.0116236, 0, 0.999932, -56.2506, 0.319144, -35.1365 )
+
+[node name="Rock_var3_6" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 0.999932, 0, 0.0116236, 0, 1, 0, -0.0116236, 0, 0.999932, -44.0714, 0.319133, -18.1503 )
+
+[node name="Rock_var1_7" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( 0.625215, 0, 0.780452, 0, 1, 0, -0.780452, 0, 0.625215, -40.9759, 0.317304, -15.298 )
+
+[node name="Rock_var2_7" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( 0.625215, 0, 0.780452, 0, 1, 0, -0.780452, 0, 0.625215, -35.865, 0.319142, -15.6175 )
+
+[node name="Rock_var3_7" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( 0.625215, 0, 0.780452, 0, 1, 0, -0.780452, 0, 0.625215, -38.1527, 0.319131, -11.7707 )
+
+[node name="Rock_var1_8" parent="Map/Rocks" instance=ExtResource( 18 )]
+transform = Transform( -0.999879, 0, -0.0155677, 0, 1, 0, 0.0155677, 0, -0.999879, -36.2573, 0.317304, -19.2191 )
+
+[node name="Rock_var2_8" parent="Map/Rocks" instance=ExtResource( 16 )]
+transform = Transform( -0.999879, 0, -0.0155677, 0, 1, 0, 0.0155677, 0, -0.999879, -47.3075, 0.319142, -32.3476 )
+
+[node name="Rock_var3_8" parent="Map/Rocks" instance=ExtResource( 17 )]
+transform = Transform( -0.999879, 0, -0.0155677, 0, 1, 0, 0.0155677, 0, -0.999879, -51.5332, 0.319131, -20.555 )
+
+[node name="Candies" type="Node" parent="Map"]
+
+[node name="Candy_var2_0" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1957, 0.382988, -19.2922 )
+
+[node name="Candy_var2_1" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21089, 0.37854, -20.1712 )
+
+[node name="Candy_var2_2" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1071, 0.3, -80.0508 )
+
+[node name="Candy_var2_4" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39803, 0.3, -118.449 )
+
+[node name="Candy_var2_3" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16956, 0.3, -28.2861 )
+
+[node name="Candy_var1_0" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 133.169, 0.3, -27.013 )
+
+[node name="Candy_var2_5" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.555672, 0, 0.831402, 0, 1, 0, -0.831402, 0, 0.555672, -102.316, 0.3, 62.8971 )
+
+[node name="Candy_var2_6" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.555672, 0, 0.831402, 0, 1, 0, -0.831402, 0, 0.555672, -103.84, 0.3, -3.92495 )
+
+[node name="Candy_var2_7" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.555672, 0, 0.831402, 0, 1, 0, -0.831402, 0, 0.555672, -25.7844, 0.3, 41.5472 )
+
+[node name="Candy_var1_1" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( 0.555672, 0, 0.831402, 0, 1, 0, -0.831402, 0, 0.555672, 47.5113, 0.3, -65.8274 )
+
+[node name="Candy_var2_8" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.0869645, 0, 0.996211, 0, 1, 0, -0.996211, 0, 0.0869645, -17.9611, 0.3, 213.943 )
+
+[node name="Candy_var2_9" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.0869645, 0, 0.996211, 0, 1, 0, -0.996211, 0, 0.0869645, -51.4562, 0.3, 156.101 )
+
+[node name="Candy_var2_10" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.0869645, 0, 0.996211, 0, 1, 0, -0.996211, 0, 0.0869645, 38.8494, 0.3, 158.396 )
+
+[node name="Candy_var1_2" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( 0.0869645, 0, 0.996211, 0, 1, 0, -0.996211, 0, 0.0869645, 51.4231, 0.3, 28.9995 )
+
+[node name="Candy_var2_11" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.104806, 0, 0.994493, 0, 1, 0, -0.994493, 0, 0.104806, 60.6205, 0.3, 247.65 )
+
+[node name="Candy_var2_12" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.104806, 0, 0.994493, 0, 1, 0, -0.994493, 0, 0.104806, 28.1675, 0.3, 189.218 )
+
+[node name="Candy_var2_13" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.104806, 0, 0.994493, 0, 1, 0, -0.994493, 0, 0.104806, 118.417, 0.3, 193.131 )
+
+[node name="Candy_var1_3" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( 0.104806, 0, 0.994493, 0, 1, 0, -0.994493, 0, 0.104806, 133.308, 0.3, 63.9804 )
+
+[node name="Candy_var2_14" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, 288.145, 0.299969, 240.893 )
+
+[node name="Candy_var2_15" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, 224.539, 0.299969, 261.43 )
+
+[node name="Candy_var2_16" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, 245.836, 0.299969, 173.642 )
+
+[node name="Candy_var1_4" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, 122.006, 0.299969, 134.048 )
+
+[node name="Candy_var2_17" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, -96.3538, 0.299985, 267.201 )
+
+[node name="Candy_var2_18" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, -159.96, 0.299985, 287.737 )
+
+[node name="Candy_var2_19" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, -138.663, 0.299985, 199.949 )
+
+[node name="Candy_var1_5" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( -0.955433, 0, 0.295208, 0, 1, 0, -0.295208, 0, -0.955433, -262.493, 0.299985, 160.355 )
+
+[node name="Candy_var2_20" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -305.188, 0.299985, 4.16171 )
+
+[node name="Candy_var2_21" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -242.185, 0.299985, -18.1569 )
+
+[node name="Candy_var2_22" parent="Map/Candies" instance=ExtResource( 19 )]
+transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -261.003, 0.299985, 70.196 )
+
+[node name="Candy_var1_6" parent="Map/Candies" instance=ExtResource( 20 )]
+transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -136.107, 0.299985, 106.288 )
+
+[node name="NPCs" type="Node" parent="Map"]
+
+[node name="Squirrel" parent="Map/NPCs" instance=ExtResource( 12 )]
+transform = Transform( 0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.82873, 0.319478, -6.39633 )
+text_to_show = "Wood"
+
+[node name="Deer buck" parent="Map/NPCs" instance=ExtResource( 13 )]
+transform = Transform( -0.661953, 0, -0.749545, 0, 1, 0, 0.749545, 0, -0.661953, 4.34177, 0.317624, 2.49565 )
+text_to_show = "Scraps"
+ressouces_type = 2
+
+[node name="Deer doe" parent="Map/NPCs" instance=ExtResource( 15 )]
+transform = Transform( -0.596505, 0, 0.802609, 0, 1, 0, -0.802609, 0, -0.596505, -8.29714, 0.32202, 2.83388 )
+text_to_show = "Candy"
+ressouces_type = 3
+
+[node name="Scarecrow" parent="Map/NPCs" instance=ExtResource( 14 )]
+transform = Transform( 0.741952, 0, 0.670453, 0, 1, 0, -0.670453, 0, 0.741952, -9.51099, 0.321976, -6.7447 )
+text_to_show = "Stone"
+ressouces_type = 1
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792478, 0.0200014, 5.88859 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7337, 0.0200014, 6.40382 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Deer Doe.glb" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Witch Hat.glb" type="PackedScene" id=3]
+[ext_resource path="res://assets/Candy2.glb" type="PackedScene" id=4]
+
+[sub_resource type="CylinderShape" id=1]
+height = 1.6577
+radius = 0.813677
+
+[node name="Deer doe" instance=ExtResource( 2 )]
+
+[node name="Label3D" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54198, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825351, 0 )
+shape = SubResource( 1 )
+
+[node name="Deer Doe" parent="." index="3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.289297 )
+
+[node name="Witch Hat" parent="Deer Doe" index="1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.994678, 0.103036, 0, -0.103036, 0.994678, 0, 1.66046, 0.77546 )
+
+[node name="Candy2" parent="Deer Doe" index="2" instance=ExtResource( 4 )]
+transform = Transform( 0.882078, -0.450766, 0.136927, 0, 0.290652, 0.956829, -0.471104, -0.843997, 0.256378, 0.118934, 1.44833, 1.30115 )
