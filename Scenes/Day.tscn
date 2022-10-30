@@ -15255,7 +15255,7 @@ transform = Transform( 0.963364, 0, -0.268197, 0, 1, 0, 0.268197, 0, 0.963364, -
 
 [node name="Squirrel" parent="Map/NPCs" instance=ExtResource( 12 )]
 transform = Transform( 0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.82873, 0.319478, -6.39633 )
-text_to_show = "Squeak squeak! All of these loosers don't know what will befall into them, give me wood, I make fortifications!"
+text_to_show = "Squeak squeak! All of these losers don't know what will befall into them, give me wood, I make fortifications!"
 
 [node name="Deer buck" parent="Map/NPCs" instance=ExtResource( 13 )]
 transform = Transform( -0.661953, 0, -0.749545, 0, 1, 0, 0.749545, 0, -0.661953, 4.34177, 0.317624, 2.49565 )

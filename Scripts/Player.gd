@@ -47,7 +47,7 @@ func _physics_process(delta):
 			objTarget = target
 			if Input.is_action_just_pressed("Line_2") && woodcutting == -1 || Input.is_action_just_pressed("Line_3") && woodcutting == 1:
 				actionCounter += 1
-				if actionCounter == 10:
+				if actionCounter == 5:
 					resources[ResourceType.WOOD] += 1
 					objTarget.free()
 					reset()
@@ -75,7 +75,7 @@ func _physics_process(delta):
 			label.show()
 			label.set_text("Space: Pickup")
 			objTarget = target
-			if Input.is_action_pressed("action_spacebar"):
+			if Input.is_action_just_pressed("action_spacebar"):
 				resources[ResourceType.CANDY] += 1
 				objTarget.free()
 				reset()
