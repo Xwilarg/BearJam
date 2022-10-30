@@ -38,7 +38,7 @@ func updateMainParameters():
 	if permissiveness < 0.1:
 		permissiveness = 0.1
 	maxBurst = 1 + (rock / 10)
-	delayBetweenNotes = 0.2 - (0.005 * scrap)
+	delayBetweenNotes = 0.2 - (0.003 * scrap)
 	if delayBetweenNotes < 0.05:
 		delayBetweenNotes = 0.05
 	songDuration = 10 + (2 * wood)
