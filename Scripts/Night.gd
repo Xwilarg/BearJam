@@ -13,6 +13,8 @@ var currPattern: int
 const notePrefab = preload("../Scenes/Note.tscn")
 var timer = 1
 
+var notesPlayers: Array
+
 var burst = 0
 
 var comboLabel: Object
@@ -28,16 +30,26 @@ var scoreBad: Object
 var scoreGood: Object
 var scoreGreat: Object
 
+var bgm: Object
+
 var allNotes = []
 
 var musicTimer: float
 
 func _ready():
+	bgm = $Audios/AudioStreamPlayer
+	
 	scoreMiss = $Score/Miss
 	scoreBad = $Score/Bad
 	scoreGood = $Score/Good
 	scoreGreat = $Score/Great
 	
+	notesPlayers = [
+		$Audios/Audio_1,
+		$Audios/Audio_2,
+		$Audios/Audio_3,
+		$Audios/Audio_4
+	]
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 	comboLabel = $ComboLabel
 	timerLabel = $TimerLabel
@@ -128,10 +140,16 @@ func _process(delta):
 						combo = 0
 					else:
 						break
+					notesPlayers[i].play()
 					allNotes.erase(note)
 					note.free();
 					break
 	update_ui()
+
+	# loop background music
+	if !bgm.is_playing():
+		bgm.play()
+
 
 func update_ui():
 	comboLabel.text = "" if combo < 10 else str(combo)
