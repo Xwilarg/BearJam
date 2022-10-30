@@ -20,9 +20,12 @@ var comboLabel: Object
 
 var allNotes = []
 
+var musicTimer: float
+
 func _ready():
 	linesDisplay = [ $Line1/DisplayLine, $Line2/DisplayLine, $Line3/DisplayLine, $Line4/DisplayLine ]
 	comboLabel = $ComboLabel
+	musicTimer = GameSytem.songDuration
 
 enum Pattern { Stair, Ladder, Funnel }
 
@@ -65,8 +68,12 @@ func spawnNote():
 	patternProg += 1
 
 func _process(delta):
+	musicTimer -= delta
+	if musicTimer <= 0.0:
+		pass # End of the game
+
 	timer -= delta
-	if timer <= 0:
+	if timer <= 0.0:
 		if patternProg == patternArray.size():
 			patternProg = 0
 			patternArray = getPatternArray(rng.randi_range(0, getPatternMaxSize()))
