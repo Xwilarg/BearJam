@@ -147,3 +147,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8013, 0.164504, -9.0384 )
 
 [node name="Tree_var3_14" parent="Forest" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4631, 0.164504, -19.7409 )
+
+[node name="Credits" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Text" type="Label" parent="Credits"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Credits:
+
+3D Modelling:
+Jadith Nicole Bruzenak
+
+Musics & Sounds:
+Alexandre Coulon
+
+Programming:
+???
+Christian Chaux"
+align = 1
+valign = 1

@@ -15,3 +15,5 @@ func _input(event):
 			var name = selection.collider.name
 			if name == "Play":
 				get_tree().change_scene("res://Scenes/Day.tscn")
+			elif name == "Credits":
+				$Credits/Text.visible = !$Credits/Text.visible

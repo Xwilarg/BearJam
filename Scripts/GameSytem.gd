@@ -2,7 +2,7 @@ extends Node
 
 var permissiveness = .5 # How much error margin you have when clicking a note
 var maxBurst = 3 # Number of patterns that can follow each others
-var delayBetweenNotes = 0.2 # Number of seconds between each notes
+var delayBetweenNotes = 0.1 # Number of seconds between each notes
 var songDuration = 180 # Duration of the song
 
 var day_time = 0;
